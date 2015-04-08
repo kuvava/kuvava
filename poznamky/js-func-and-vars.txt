@@ -1,0 +1,1 @@
+clickBut1()			function pro kliknutí na #but1

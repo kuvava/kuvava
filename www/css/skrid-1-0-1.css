@@ -49,6 +49,8 @@ transition:800ms;}
 .but{
 cursor:pointer;}
 
+
+#test{height: 1px;width: 100px;}
 @media screen and (max-width: 800px){
 html,body{
 font-size:14px;}
@@ -59,6 +61,7 @@ width: 33.33333333333333333%;
 padding-bottom: 0.4rem;}
 }
 @media screen and (max-width: 400px){
+#test{width:11px;}
 html,body{
 font-size:12px;}
 body{
