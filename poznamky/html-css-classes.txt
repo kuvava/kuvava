@@ -1,0 +1,4 @@
+but				vzhled jako button
+e1 až e99		první až devedesátý devátý element (slouží pro jquery selektory)
+js				detekce javascriptu: html.js
+tac				"text-align: center;"

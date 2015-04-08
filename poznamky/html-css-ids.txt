@@ -1,0 +1,3 @@
+#but1			button1 (skrývá a okdrývá menu při úzké šířce displaye)
+#ma				menu a (hlavní nahoře)
+#ma0 až #ma6	položky menu a

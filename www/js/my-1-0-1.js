@@ -10,5 +10,12 @@
 
 
 $(function(){
-
+$('#but1').click(function(){
+	$('#ma').slideToggle(600);
+	$('#but1 .e1').fadeToggle(300,function(){
+		$(this).text($(this).text() === 'Zobrazit menu' ? 'Schovat menu' : 'Zobrazit menu');
+		$(this).fadeToggle(300);
+	});
+	/*$('#but1 .e1').text($('#but1 .e1').text() === 'Zobrazit menu' ? 'Schovat menu' : 'Zobrazit menu');*/
+});
 });
