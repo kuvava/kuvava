@@ -31,6 +31,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 		if ($stranka) {
 			if ($stranka->editor_zmeneno != 'ne'){
 				$texy = new \Texy;
+				$texy->headingModule->top = 2;
 				$stranka->update(array(
 					'obsah_html_nahore' => $texy->process(
 						$stranka->ref('editor_obsahu_stranky')->obsah_texy_nahore
