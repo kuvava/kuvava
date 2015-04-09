@@ -36,7 +36,7 @@ width: 16.666666666666%;}
 width:8em;width:12rem;}
 h1,menu,.but{
 font-weight:bold;}
-h1 a,menu a{
+h1 a,menu a,a{
 text-decoration:none;}
 h1,h2,h3,menu li,.but,.tac{
 text-align:center;}
@@ -48,6 +48,8 @@ h1 a:hover,menu a:hover li,body{
 color:#494f52;}
 .but{
 background-color:#494f52;}
+a{
+color:#4183c4;}
 h1 a,menu li,.but{
 transition:800ms;}
 .but{
