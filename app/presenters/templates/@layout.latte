@@ -27,8 +27,14 @@
 <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message|noescape}</div>
 
 <div id="text">
+<div class="col1" n:ifset="$stranka->obsah_html_nahore">
+{$stranka->obsah_html_nahore|noescape}
+</div>
 <div class="col1">
 {include content}
+</div>
+<div class="col1" n:ifset="$stranka->obsah_html_dole">
+{$stranka->obsah_html_dole|noescape}
 </div>
 </div>
 

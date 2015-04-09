@@ -29,21 +29,25 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 			);
 		$stranka = $this->database->table('stranka')->get($idStranek[$this->name]);
 		if ($stranka) {
-			if ($stranka->obsah_zmeneno == 1){
+			if ($stranka->editor_zmeneno != 'ne'){
 				$texy = new \Texy;
 				$stranka->update(array(
-					'obsah_html_nahore' => $texy->process($stranka->obsah_texy_nahore),
-					'obsah_html_dole' => $texy->process($stranka->obsah_texy_dole),
+					'obsah_html_nahore' => $texy->process(
+						$stranka->ref('editor_obsahu_stranky')->obsah_texy_nahore
+					),
+					'obsah_html_dole' => $texy->process(
+						$stranka->ref('editor_obsahu_stranky')->obsah_texy_dole
+					),
 				));
 				$zaloha = array(
 					'stranka_id' => $stranka->id,
-					'texy_nahore' => $stranka->obsah_texy_nahore,
-					'texy_dole' => $stranka->obsah_texy_dole,
+					'texy_nahore' => $stranka->ref('editor_obsahu_stranky')->obsah_texy_nahore,
+					'texy_dole' => $stranka->ref('editor_obsahu_stranky')->obsah_texy_dole,
 					'html_nahore' => $stranka->obsah_html_nahore,
 					'html_dole' => $stranka->obsah_html_dole
 				);
 				$this->database->table('zaloha_obsah')->insert($zaloha);
-				$stranka->update(array('obsah_zmeneno' => 0));
+				$stranka->update(array('editor_zmeneno' => 'ne'));
 			}
 			return $stranka;
 		} else {

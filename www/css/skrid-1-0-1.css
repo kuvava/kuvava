@@ -22,6 +22,8 @@ padding:0;}
 padding:0.3em;padding: 0rem 1rem 0.1rem 1rem;}
 body{
 padding:0.5em;padding:0.5rem;}
+#text{
+padding-top: 1em;padding-top: 1rem;}
 menu{
 max-width:45em;max-width:60rem;}
 #text .col1{
@@ -65,7 +67,8 @@ padding-bottom: 0.4rem;}
 @media screen and (max-width: 400px){
 #test{width:11px;}
 html,body{
-font-size:12px;}
+font-size:12px;
+line-height: 1.7;}
 body{
 min-width:250px;}
 menu a{
@@ -75,6 +78,11 @@ display:inline-block;}
 html.js #ma{
 display:none;}
 }
+@media screen and (min-width: 1200px){
+html,body{
+font-size:18px;}
+}
+
 /*Nette*/
 #ajax-spinner{
 margin: 15px 0 0 15px;
