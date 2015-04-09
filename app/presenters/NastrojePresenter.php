@@ -7,10 +7,11 @@ use Nette,
 
 
 /**
- * Homepage presenter.
+ * Nastroje presenter.
  */
-class HomepagePresenter extends BasePresenter
+class NastrojePresenter extends BasePresenter
 {
+
 
 
 }

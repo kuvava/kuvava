@@ -1,0 +1,23 @@
+{block scripts}
+{include parent}
+<script>
+$(document).ready(function(){
+	$('#policko').keyup(function(){
+		var policko = $(this);
+		$('#pocet').val(policko.val().length);
+	});
+$('#policko').bind('paste', function(){
+	var policko = $(this);
+	window.setTimeout(function(){
+		$('#pocet').val(policko.val().length);
+	}, 200);})
+});
+</script>
+{/block scripts}
+
+{block content}
+<h2>Formulář ukazující počet znaků</h2>
+<form>
+	<textarea id="policko"></textarea><br>
+	<input id="pocet" type="text" readonly="readonly">
+</form>
