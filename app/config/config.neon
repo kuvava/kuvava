@@ -19,6 +19,10 @@ session:
 	expiration: 14 days
 
 
+tracy:
+	email: urbanovi@kuvava.cz
+
+
 services:
 	- App\Model\UserManager
 	- App\Forms\SignFormFactory

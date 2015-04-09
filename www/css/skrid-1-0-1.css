@@ -14,7 +14,7 @@ menu,.but{
 font-size:1.5em;font-size:1.5rem;}
 body,h1,menu{
 margin: 0;}
-menu,#but1{
+menu,#but1,#text .col1{
 margin-left:auto;margin-right:auto;}
 menu{
 padding:0;}
@@ -24,6 +24,8 @@ body{
 padding:0.5em;padding:0.5rem;}
 menu{
 max-width:45em;max-width:60rem;}
+#text .col1{
+max-width:53em;max-width:53rem;}
 body{
 min-width:750px;}
 menu a{
@@ -34,13 +36,13 @@ h1,menu,.but{
 font-weight:bold;}
 h1 a,menu a{
 text-decoration:none;}
-h1,menu li,.but,.tac{
+h1,h2,h3,menu li,.but,.tac{
 text-align:center;}
 body{
 background-color:#ffffff;}
 h1 a,menu li,.but{
 color:#d0d1d3;}
-h1 a:hover,menu a:hover li{
+h1 a:hover,menu a:hover li,body{
 color:#494f52;}
 .but{
 background-color:#494f52;}
@@ -86,7 +88,11 @@ color: black;
 background: #FFF9D7;
 border: 1px solid #E2C822;
 padding: 1em;
-margin: 1em 0;}
+margin: 1em 0;
+text-align:center;}
+div.flash.fr{
+background-color:#5e0010;
+color:#ffffff;}
 a[href^="#error:"]{
 background: red;
 color: white;}

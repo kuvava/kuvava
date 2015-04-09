@@ -24,9 +24,13 @@
 <div class="tac"><div id="but1" class="but">&nbsp;<span class="e1">Zobrazit menu</span>&nbsp;</div></div>
 <menu id="ma"><a href="/zmena-image-muze/"><li id="ma1">Pro pány</li></a><a href="/zmena-image-zeny/"><li  id="ma2">Pro dámy</li></a><a href="/promena-vzhledu/"><li id="ma3">Ukázky</li></a><a href="/moderni-promena-vizaze/"><li id="ma4">Aktuality</li></a><a href="/team-vizaz-foceni/"><li id="ma5">Náš tým</li></a><a href="/osobni-promeny-kontakt/"><li id="ma6">Kontakt</li></a></menu>
 
-<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message|noescape}</div>
 
+<div id="text">
+<div class="col1">
 {include content}
+</div>
+</div>
 
 <div id="test"></div>
 {block scripts}
