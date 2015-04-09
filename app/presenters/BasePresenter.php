@@ -62,7 +62,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 	}
 	public function beforeRender()
 	{
-		if (!in_array($this->name, array('Error','Nastroje'), TRUE)){
+		if (!in_array($this->name, array('Error','Nastroje','Sign'), TRUE)){
 			$this->template->stranka = $this->getStranka();
 		}
 	}

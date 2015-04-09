@@ -2,22 +2,28 @@
 {include parent}
 <script>
 $(document).ready(function(){
-	$('#policko').keyup(function(){
-		var policko = $(this);
-		$('#pocet').val(policko.val().length);
-	});
+$('#policko').keyup(function(){
+	var policko = $(this);
+	$('#pocet').val(policko.val().length);
+});
 $('#policko').bind('paste', function(){
 	var policko = $(this);
 	window.setTimeout(function(){
 		$('#pocet').val(policko.val().length);
-	}, 200);})
+	}, 200);
+});
+$('#but2').click(function(){
+	window.location.href = '/nastroje/zpracuj-fotky/';
+});
 });
 </script>
 {/block scripts}
 
 {block content}
+<h2>Spustit zpracovávání fotografií pro fotogalerii</h2>
+<div id="but2" class="but">Zpracovat fotografie</div>
 <h2>Formulář ukazující počet znaků</h2>
 <form>
-	<textarea id="policko"></textarea><br>
+	<textarea id="policko" rows=5 cols=100></textarea><br>
 	<input id="pocet" type="text" readonly="readonly">
 </form>

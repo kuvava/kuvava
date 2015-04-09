@@ -2,10 +2,21 @@ html,body{
 font-family:"Myriad Pro","myriad-pro",sans-serif;
 font-size:16px;
 line-height:1.6;}
+#user{
+line-height:1;}
+#user{
+font-size:0.8em;font-size:0.8rem;}
+#user{
+position: absolute}
+#user{
+right:0px;
+top:0px;}
 #but1,#but1 .e2{
 display: none;}
-menu a,.but{
+menu a,.but,#user{
 display: inline-block;}
+#but2{
+display:block;}
 menu{
 list-style-type:none;}
 h1{
@@ -14,7 +25,7 @@ menu,.but{
 font-size:1.5em;font-size:1.5rem;}
 body,h1,menu{
 margin: 0;}
-menu,#but1,#text .col1{
+menu,.but,#text .col1{
 margin-left:auto;margin-right:auto;}
 menu{
 padding:0;}
@@ -34,6 +45,8 @@ menu a{
 width: 16.666666666666%;}
 #but1{
 width:8em;width:12rem;}
+#but2{
+width:10em;width:15rem;}
 h1,menu,.but{
 font-weight:bold;}
 h1 a,menu a,a{
@@ -76,7 +89,7 @@ min-width:250px;}
 menu a{
 width: 100%;}
 html.js #but1{
-display:inline-block;}
+display: block;}
 html.js #ma{
 display:none;}
 }
@@ -93,13 +106,14 @@ background: white url('../images/spinner.gif') no-repeat 50% 50%;
 font-size: 0;
 z-index: 123456;
 display: none;}
-div.flash{
+div.flash,#user{
 color: black;
 background: #FFF9D7;
 border: 1px solid #E2C822;
 padding: 1em;
 margin: 1em 0;
 text-align:center;}
+#user{margin:0;padding:0.2em;padding:0.2rem;}
 div.flash.fr{
 background-color:#5e0010;
 color:#ffffff;}
