@@ -14,6 +14,7 @@
 <link rel="shortcut icon" href="{$basePath}/favicon.ico">
 
 <!--[if lt IE 9]><script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
+{ifset #menuSelectors}<style type="text/css">{include menuSelectors} { color:#494f52;}</style>{/ifset}
 {block head}{/block}
 </head>
 
@@ -22,7 +23,7 @@
 <script> document.documentElement.className+=' js' </script>
 <h1><a href="http://www.skryta-identita.cz/">Skrytá identita</a></h1>
 <div class="tac"><div id="but1" class="but">&nbsp;<span class="e1">Zobrazit menu</span>&nbsp;</div></div>
-<menu id="ma"><a href="/zmena-image-muze/"><li id="ma1">Pro pány</li></a><a href="/zmena-image-zeny/"><li  id="ma2">Pro dámy</li></a><a href="/promena-vzhledu/"><li id="ma3">Ukázky</li></a><a href="/moderni-promena-vizaze/"><li id="ma4">Aktuality</li></a><a href="/team-vizaz-foceni/"><li id="ma5">Náš tým</li></a><a href="/osobni-promeny-kontakt/"><li id="ma6">Kontakt</li></a></menu>
+<menu id="ma"><a href="/zmena-image-muze/"><li id="ma7">Pro pány</li></a><a href="/zmena-image-zeny/"><li  id="ma6">Pro dámy</li></a><a href="/promena-vzhledu/"><li id="ma5">Ukázky</li></a><a href="/moderni-promena-vizaze/"><li id="ma3">Aktuality</li></a><a href="/team-vizaz-foceni/"><li id="ma4">Náš tým</li></a><a href="/osobni-promeny-kontakt/"><li id="ma2">Kontakt</li></a></menu>
 
 <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message|noescape}</div>
 
