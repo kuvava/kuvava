@@ -7,51 +7,29 @@
 <meta name="robots" content="{$robots}" n:ifset="$robots">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>{ifset $stranka->googletitulek}{$stranka->googletitulek}{else}Proměna image pro pány i dámy{/ifset} | www.skryta-identita.cz</title>
-<meta name="description" content="{$stranka->googlepopisek}" n:ifset="$stranka->googlepopisek">
+<title>Veřejné stahování různých balíčků | www.fotourban.cz</title>
+<meta name="description" content="Pokud potřebujeme poskytnout rozsáhlejší obsah ke stažení, umístíme balíček ve formátu .zip na tuto adresu.">
 
 <link rel="stylesheet" href="{$basePath}/css/skrid-1-0-2.css">
 <link rel="shortcut icon" href="{$basePath}/favicon.ico">
 
-<!--[if lt IE 9]><script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
-{ifset #menuSelectors}<style type="text/css">{include menuSelectors} { color:#494f52;}</style>{/ifset}
 {block head}{/block}
 </head>
 
 
 <body>
 <script> document.documentElement.className+=' js' </script>
-<div n:if="$user->loggedIn" id="user">
-		Přihlášený uživatel:<br><strong>{$user->getId()}</strong> {if $user->isInRole('admin')}(administrátor)<br>{/if}
-		<a n:href="Sign:out"><strong>Odhlásit se</strong></a> &nbsp;&nbsp; <a n:href="Nastroje:" n:if="$user->isInRole('admin')"><strong>Nástroje</strong></a>
-</div>
 
-<h1><a href="http://www.skryta-identita.cz/">Skrytá identita</a></h1>
-<div class="tac"><div id="but1" class="but">&nbsp;<span class="e1">Zobrazit menu</span>&nbsp;</div></div>
-<menu id="ma"><a href="/zmena-image-muze/"><li id="ma7">Pro pány</li></a><a href="/zmena-image-zeny/"><li  id="ma6">Pro dámy</li></a><a href="/promena-vzhledu/"><li id="ma5">Ukázky</li></a><a href="/moderni-promena-vizaze/"><li id="ma3">Aktuality</li></a><a href="/team-vizaz-foceni/"><li id="ma4">Náš tým</li></a><a href="/osobni-promeny-kontakt/"><li id="ma2">Kontakt</li></a></menu>
+<h1><a href="http://www.fotourban.cz/">www.fotourban.cz -> stahování</a></h1>
 
 <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message|noescape}</div>
 
 <div id="text">
-<div class="col1" n:ifset="$stranka->obsah_html_nahore">
-{$stranka->obsah_html_nahore|noescape}
-</div>
 <div class="col1">
 {include content}
-</div>
-<div class="col1" n:ifset="$stranka->obsah_html_dole">
-{$stranka->obsah_html_dole|noescape}
 </div>
 </div>
 
 <div id="test"></div>
-{block scripts}
-<!--[if lt IE 9]><script src="http://code.jquery.com/jquery-1.11.2.min.js"></script><![endif]-->
-<![if gt IE 8]>
-<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-<![endif]>
-<script src="http://nette.github.io/resources/js/netteForms.min.js"></script>
-<script src="{$basePath}/js/my-1-0-2.js"></script>
-{/block}
 </body>
 </html>

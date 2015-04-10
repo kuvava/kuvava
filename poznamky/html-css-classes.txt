@@ -1,9 +1,0 @@
-but				vzhled jako button
-col1			jeden sloupeček na celou šířku
-col2			jeden sloupeček na polovinu šířky
-col3			jeden sloupeček na třetinu šířky
-col4			jeden sloupeček na čtvrtinu šířky
-e1 až e99		první až devedesátý devátý element (slouží pro jquery selektory)
-fr				flash-red = červená vyskakovací zpráva
-js				detekce javascriptu: html.js
-tac				"text-align: center;"
