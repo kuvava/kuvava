@@ -18,21 +18,22 @@ function clickBut1(){
 	$('#ma').slideToggle(600);
 }
 $(function(){
-var procesMenuAResize = true;var beginTestAWidth = $('#test').width();
+var procesMenuAResize = false;
 $('#but1').click(function(){clickBut1();});
 $(window).resize(function() {
-	if ($('#but1 .e1').hasClass('clicked') && procesMenuAResize){
-		procesMenuAResize = false;
+	if ($('#but1 .e1').hasClass('clicked') && ((($('#test').width() > 11) && $('#ma').is(':hidden')) || (($('#test').width() <= 11) && $('#ma').is(':visible')))){
 		setTimeout(function (){
-			var endWidth = $('#test').width();
-			if ((endWidth <= 11) && ((endWidth - beginTestAWidth) < 0) && $('#ma').is(':visible')){
+			if ($('#ma').is(':hidden') && ($('#test').width() > 11)){
 				clickBut1();
-			} else if ((endWidth > 11) && ((endWidth - beginTestAWidth) > 0) && $('#ma').is(':hidden')){
-				clickBut1();
+				procesMenuAResize = true;
 			}
-			procesMenuAResize = true;
-			beginTestAWidth = $('#test').width();
-		}, 650);
+			if ($('#ma').is(':visible') && ($('#test').width() <= 11)){
+				if (procesMenuAResize == true) {
+					procesMenuAResize = false;
+					clickBut1();
+				}
+			}
+		}, 610);
 	}
 });
 });
