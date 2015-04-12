@@ -1,1 +1,18 @@
 {block content}
+<h2>Seznam položek ke stažení</h2>
+<p class="tac">
+Pro zahájení stahování klikněte na příslušnou položku.
+</p>
+
+{var $cesta = $basePath . '/download/'}
+{block seznamPolozek}
+<ul n:foreach="$rootZip as $polozka">
+<li><a href="{$cesta}{$polozka->getFilename()}" target="_blank">{$polozka->getFilename()}</a> (velikost souboru: {$polozka->getSize()|bytes})</li>
+</ul>
+{/block}
+
+{foreach $subdirZip as $key => $polozka2}
+<h3>{$key}</h3>
+{var $novaCesta = $cesta . $key . '/'}
+{include seznamPolozek, rootZip => $polozka2, cesta => $novaCesta}
+{/foreach}

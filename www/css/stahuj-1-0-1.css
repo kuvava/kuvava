@@ -1,0 +1,134 @@
+html,body{
+font-family:"Myriad Pro","myriad-pro",sans-serif;
+font-size:16px;
+line-height:1.6;}
+#user{
+line-height:1;}
+#user{
+font-size:0.8em;font-size:0.8rem;}
+#user{
+position: absolute}
+#user{
+right:0px;
+top:0px;}
+#but1,#but1 .e2{
+display: none;}
+menu a,.but,#user{
+display: inline-block;}
+#but2{
+display:block;}
+menu{
+list-style-type:none;}
+h1{
+font-size:2.5em;font-size:2.5rem;}
+menu,.but{
+font-size:1.5em;font-size:1.5rem;}
+body,h1,menu{
+margin: 0;}
+menu,.but,#text .col1{
+margin-left:auto;margin-right:auto;}
+menu{
+padding:0;}
+.but{
+padding:0.3em;padding: 0rem 1rem 0.1rem 1rem;}
+body{
+padding:0.5em;padding:0.5rem;}
+#text{
+padding-top: 0.5em;padding-top: 0.5rem;}
+menu{
+max-width:45em;max-width:60rem;}
+#text .col1{
+max-width:53em;max-width:53rem;}
+body{
+min-width:750px;}
+menu a{
+width: 16.666666666666%;}
+#but1{
+width:8em;width:12rem;}
+#but2{
+width:10em;width:15rem;}
+h1,menu,.but{
+font-weight:bold;}
+h1 a,menu a,a{
+text-decoration:none;}
+h1,h2,menu li,.but,.tac{
+text-align:center;}
+h3{
+text-align:left;}
+body{
+background-color:#ffffff;}
+h1 a,menu li,.but{
+color:#d0d1d3;}
+h1 a:hover,menu a:hover li,body{
+color:#494f52;}
+.but{
+background-color:#494f52;}
+a{
+color:#4183c4;}
+h1 a,menu li,.but{
+transition:800ms;}
+.but{
+cursor:pointer;}
+
+
+#test{height: 1px;width: 100px;}
+@media screen and (max-width: 800px){
+html,body{
+font-size:14px;}
+body{
+min-width:370px;}
+menu a{
+width: 33.33333333333333333%;
+padding-bottom: 0.4rem;}
+}
+@media screen and (max-width: 400px){
+#test{width:11px;}
+html,body{
+font-size:12px;
+line-height: 1.7;}
+body{
+min-width:250px;}
+menu a{
+width: 100%;}
+html.js #but1{
+display: block;}
+html.js #ma{
+display:none;}
+}
+@media screen and (min-width: 1200px){
+html,body{
+font-size:18px;}
+}
+
+/*Nette*/
+#ajax-spinner{
+margin: 15px 0 0 15px;
+padding: 13px;
+background: white url('../images/spinner.gif') no-repeat 50% 50%;
+font-size: 0;
+z-index: 123456;
+display: none;}
+div.flash,#user{
+color: black;
+background: #FFF9D7;
+border: 1px solid #E2C822;
+padding: 1em;
+margin: 1em 0;
+text-align:center;}
+#user{margin:0;padding:0.2em;padding:0.2rem;}
+div.flash.fr{
+background-color:#5e0010;
+color:#ffffff;}
+a[href^="#error:"]{
+background: red;
+color: white;}
+form th, form td{
+vertical-align: top;
+font-weight: normal;}
+form th{
+text-align: right;}
+form .required label{
+font-weight: bold;}
+form .error{
+color: #D00;
+font-weight: bold;}
