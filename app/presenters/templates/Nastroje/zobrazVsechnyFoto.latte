@@ -1,0 +1,29 @@
+{block head}
+<style type="text/css">
+	.prev{
+		display: inline-block;
+		width: 200px;
+		height: 200px;
+		overflow: hidden;
+	}
+	.prev img.nasirku{
+		height: 100%;
+		width: auto;
+	}
+	.prev img.navysku{
+		height: auto;
+		width: 100%;
+	}
+	.prev img{
+		position: relative;
+	}
+</style>
+{/block head}
+{block content}
+<h2>Přehled všech fotografií</h2>
+<ul n:foreach="$tabulkaFotek as $row">
+	<li>
+		<strong>{block filename}{$row->id}.{$row->fileextension}{/block}</strong>:<br>
+		{block miniatura}<img src="/images/gallery/all/thumbs/s/{include filename}" class="{$row->tvar}"{ifset $posunXY}{if $row->tvar != ctverec}style="{$row->tvar === nasirku ? right : bottom}: {$row->nahled_posun}px"{/if}{/ifset}>{/block} &nbsp;&nbsp;&nbsp; <div class="prev">{include miniatura, $posunXY = ano}</div>
+	</li>
+</ul>

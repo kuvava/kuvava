@@ -123,5 +123,10 @@ class NastrojePresenter extends BasePresenter
 			$this->redirect('Nastroje:');
 		}
 	}
+	
+	public function renderZobrazVsechnyFoto()
+	{
+		$this->template->tabulkaFotek = $this->database->table('vsechny_fotky');
+	}
 
 }

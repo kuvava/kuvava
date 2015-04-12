@@ -15,8 +15,6 @@ top:0px;}
 display: none;}
 menu a,.but,#user{
 display: inline-block;}
-#but2{
-display:block;}
 menu{
 list-style-type:none;}
 h1{
@@ -45,8 +43,6 @@ menu a{
 width: 16.666666666666%;}
 #but1{
 width:8em;width:12rem;}
-#but2{
-width:10em;width:15rem;}
 h1,menu,.but{
 font-weight:bold;}
 h1 a,menu a,a{

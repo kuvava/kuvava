@@ -1,3 +1,11 @@
+{block head}
+<style type="text/css">
+#but2,#but3{
+width:18em;width:27rem;
+display:block;
+margin-bottom:0.3em;margin-bottom:0.3rem;}
+</style>
+{/block head}
 {block scripts}
 {include parent}
 <script>
@@ -16,12 +24,15 @@ $('#but2').click(function(){
 	window.location.href = '/nastroje/zpracuj-fotky/';
 });
 });
+
+
 </script>
 {/block scripts}
 
 {block content}
-<h2>Spustit zpracovávání fotografií pro fotogalerii</h2>
-<div id="but2" class="but">Zpracovat fotografie</div>
+<h2>Spravovat fotogalerii</h2>
+<div id="but2" class="but">Zpracovat fotografie ze složky "to-do"</div>
+<a n:href="Nastroje:zobrazVsechnyFoto"><div id="but3" class="but">Přehled všech fotografií</div></a>
 <h2>Formulář ukazující počet znaků</h2>
 <form>
 	<textarea id="policko" rows=5 cols=100></textarea><br>
