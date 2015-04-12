@@ -88,17 +88,17 @@ class NastrojePresenter extends BasePresenter
 		} elseif ($sizeCat == 's') {$currentSourceFile = $imagesDir . 'thumbs/m/' . $filename;
 		}
 		
-		\Tracy\Debugger::barDump('for size:' . $sizeCat . ', resize source:' . $currentSourceFile);
+		/*\Tracy\Debugger::barDump('for size:' . $sizeCat . ', resize source:' . $currentSourceFile);*/
 		$image = Image::fromFile($currentSourceFile);
 		if ($sizeCat == 's'){
 			$image->resize($resizeDimension, $resizeDimension, Image::SHRINK_ONLY | Image::FILL);
 		} else {
 			$image->resize($resizeDimension, $resizeDimension, Image::SHRINK_ONLY);
 		}
-		$image->sharpen();
+		/*$image->sharpen();*/
 		$partUrlResizedFile = 'thumbs/' . $sizeCat . '/' . $filename;
 		$resizedFile = $imagesDir . $partUrlResizedFile;
-		$image->save($resizedFile, 70, Image::JPEG);
+		$image->save($resizedFile, 80, Image::JPEG);
 		list($width, $height, $type, $html_attr) = getimagesize($resizedFile);
 		$size = filesize($resizedFile);
 		
