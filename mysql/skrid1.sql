@@ -47,6 +47,52 @@ INSERT INTO `stranka` (`id`, `rubrika`, `googletitulek`, `googlepopisek`, `edito
 (6,	'Pro ženy',	'Změna ženské vizáže',	'adflkaf aůsldkfj aůlk fd ůask jdf aůsdkj a sůkdjfa ůslkdj aůskl jdf jů',	'ne',	NULL,	NULL,	6),
 (7,	'Pro muže',	'Super pánská proměna',	'chalalal bla bla blb clc glg mun fuk rum duk sum puk...',	'ne',	NULL,	NULL,	7);
 
+DROP TABLE IF EXISTS `vsechny_fotky`;
+CREATE TABLE `vsechny_fotky` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `googlepopis` varchar(255) COLLATE utf8_czech_ci DEFAULT NULL COMMENT 'stručně a výstižně',
+  `gallery_text` text COLLATE utf8_czech_ci COMMENT 'klidně i obsáhleji',
+  `size` int(11) NOT NULL,
+  `width` int(11) NOT NULL,
+  `height` int(11) NOT NULL,
+  `html_attr` varchar(50) COLLATE utf8_czech_ci NOT NULL,
+  `fileextension` varchar(10) COLLATE utf8_czech_ci NOT NULL,
+  `tvar` varchar(20) COLLATE utf8_czech_ci NOT NULL DEFAULT 'neznamy',
+  `l_size` int(11) NOT NULL,
+  `l_width` int(11) NOT NULL,
+  `l_height` int(11) NOT NULL,
+  `l_html_attr` varchar(50) COLLATE utf8_czech_ci NOT NULL,
+  `m_size` int(11) NOT NULL,
+  `m_width` int(11) NOT NULL,
+  `m_height` int(11) NOT NULL,
+  `m_html_attr` varchar(50) COLLATE utf8_czech_ci NOT NULL,
+  `s_size` int(11) NOT NULL,
+  `s_width` int(11) NOT NULL,
+  `s_height` int(11) NOT NULL,
+  `s_html_attr` varchar(50) COLLATE utf8_czech_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
+
+INSERT INTO `vsechny_fotky` (`id`, `googlepopis`, `gallery_text`, `size`, `width`, `height`, `html_attr`, `fileextension`, `tvar`, `l_size`, `l_width`, `l_height`, `l_html_attr`, `m_size`, `m_width`, `m_height`, `m_html_attr`, `s_size`, `s_width`, `s_height`, `s_html_attr`) VALUES
+(1,	NULL,	NULL,	525695,	1202,	1800,	'width=\"1202\" height=\"1800\"',	'jpg',	'neznamy',	0,	0,	0,	'',	0,	0,	0,	'',	0,	0,	0,	''),
+(2,	NULL,	NULL,	525695,	1202,	1800,	'width=\"1202\" height=\"1800\"',	'jpg',	'neznamy',	0,	0,	0,	'',	0,	0,	0,	'',	0,	0,	0,	''),
+(3,	NULL,	NULL,	449221,	1202,	1800,	'width=\"1202\" height=\"1800\"',	'jpg',	'neznamy',	0,	0,	0,	'',	0,	0,	0,	'',	0,	0,	0,	''),
+(4,	NULL,	NULL,	537822,	1202,	1800,	'width=\"1202\" height=\"1800\"',	'jpg',	'neznamy',	0,	0,	0,	'',	0,	0,	0,	'',	0,	0,	0,	''),
+(5,	NULL,	NULL,	481290,	1202,	1800,	'width=\"1202\" height=\"1800\"',	'jpg',	'neznamy',	0,	0,	0,	'',	0,	0,	0,	'',	0,	0,	0,	''),
+(6,	NULL,	NULL,	525695,	1202,	1800,	'width=\"1202\" height=\"1800\"',	'jpg',	'neznamy',	0,	0,	0,	'',	0,	0,	0,	'',	0,	0,	0,	''),
+(7,	NULL,	NULL,	449221,	1202,	1800,	'width=\"1202\" height=\"1800\"',	'jpg',	'neznamy',	0,	0,	0,	'',	0,	0,	0,	'',	0,	0,	0,	''),
+(8,	NULL,	NULL,	537822,	1202,	1800,	'width=\"1202\" height=\"1800\"',	'jpg',	'neznamy',	0,	0,	0,	'',	0,	0,	0,	'',	0,	0,	0,	''),
+(9,	NULL,	NULL,	898625,	3696,	2448,	'width=\"3696\" height=\"2448\"',	'jpg',	'nasirku',	0,	0,	0,	'',	0,	0,	0,	'',	0,	0,	0,	''),
+(10,	NULL,	NULL,	820822,	2448,	3696,	'width=\"2448\" height=\"3696\"',	'jpg',	'navysku',	0,	0,	0,	'',	0,	0,	0,	'',	0,	0,	0,	''),
+(11,	NULL,	NULL,	742961,	2448,	3696,	'width=\"2448\" height=\"3696\"',	'JPG',	'navysku',	0,	0,	0,	'',	0,	0,	0,	'',	0,	0,	0,	''),
+(12,	NULL,	NULL,	508420,	3696,	2448,	'width=\"3696\" height=\"2448\"',	'JPG',	'nasirku',	0,	0,	0,	'',	0,	0,	0,	'',	0,	0,	0,	''),
+(13,	NULL,	NULL,	506187,	3696,	2448,	'width=\"3696\" height=\"2448\"',	'JPG',	'nasirku',	0,	0,	0,	'',	0,	0,	0,	'',	0,	0,	0,	''),
+(14,	NULL,	NULL,	534583,	2448,	3696,	'width=\"2448\" height=\"3696\"',	'JPG',	'navysku',	0,	0,	0,	'',	0,	0,	0,	'',	0,	0,	0,	''),
+(15,	NULL,	NULL,	3505,	500,	500,	'width=\"500\" height=\"500\"',	'jpg',	'ctverec',	0,	0,	0,	'',	0,	0,	0,	'',	0,	0,	0,	''),
+(16,	NULL,	NULL,	534583,	2448,	3696,	'width=\"2448\" height=\"3696\"',	'jpg',	'navysku',	0,	0,	0,	'',	0,	0,	0,	'',	0,	0,	0,	''),
+(17,	NULL,	NULL,	506187,	3696,	2448,	'width=\"3696\" height=\"2448\"',	'jpg',	'nasirku',	0,	0,	0,	'',	0,	0,	0,	'',	0,	0,	0,	''),
+(18,	NULL,	NULL,	534583,	2448,	3696,	'width=\"2448\" height=\"3696\"',	'jpg',	'navysku',	0,	0,	0,	'',	0,	0,	0,	'',	0,	0,	0,	'');
+
 DROP TABLE IF EXISTS `zaloha_obsah`;
 CREATE TABLE `zaloha_obsah` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -67,4 +113,4 @@ INSERT INTO `zaloha_obsah` (`id`, `stranka_id`, `texy_nahore`, `texy_dole`, `htm
 (4,	4,	'Lorem ipsum dolor sit amet consectetuer et pede interdum non augue. Faucibus in congue Quisque ac cursus et Vestibulum quis Maecenas pharetra. Curabitur elit fringilla accumsan quis natoque aliquam Maecenas et libero Vestibulum. Augue wisi tincidunt dis est accumsan porttitor tempus nulla Nulla montes. Quis Sed risus Aenean quis pede risus id.\r\n\r\nElit et tortor et parturient condimentum Vivamus Donec hendrerit nunc et. Justo Vivamus enim dolor elit ante eget Cum dis eros convallis. Curabitur In facilisi orci pretium Nunc Pellentesque condimentum lorem eros suscipit. Vivamus quis fames ut Sed Ut velit nunc tempus elit Aliquam. Tempus pellentesque lacus Aenean congue sed tincidunt nisl rhoncus est ut. A mollis justo convallis congue odio dui dui ut Sed.\r\n\r\nSapien turpis ac orci dui ac quis odio pretium malesuada Pellentesque. Purus sed pede dignissim sapien Curabitur sapien eros Pellentesque pretium convallis. Lorem tortor id risus dui Curabitur parturient dolor Quisque nec Aenean. Orci lorem quis sit pellentesque orci id amet id auctor facilisis. Leo at gravida et elit vitae volutpat pretium fames at dictumst. \r\n\r\nTincidunt at metus et Vestibulum id Maecenas Vestibulum eros consequat cursus. Faucibus semper pretium Nam et semper vitae et dui adipiscing id. Fermentum odio eu sodales porttitor nec et ultrices fames quam Nulla. Quis in pretium consequat enim tempor lacinia Pellentesque aliquam congue sem. Elit tincidunt tincidunt egestas senectus Fusce cursus id ut.\r\n',	'',	'\n<p>Lorem ipsum dolor sit amet consectetuer et pede interdum non augue. Faucibus\nin congue Quisque ac cursus et Vestibulum quis Maecenas pharetra. Curabitur elit\nfringilla accumsan quis natoque aliquam Maecenas et libero Vestibulum. Augue\nwisi tincidunt dis est accumsan porttitor tempus nulla Nulla montes. Quis Sed\nrisus Aenean quis pede risus id.</p>\n\n<p>Elit et tortor et parturient condimentum Vivamus Donec hendrerit nunc et.\nJusto Vivamus enim dolor elit ante eget Cum dis eros convallis. Curabitur In\nfacilisi orci pretium Nunc Pellentesque condimentum lorem eros suscipit. Vivamus\nquis fames ut Sed Ut velit nunc tempus elit Aliquam. Tempus pellentesque lacus\nAenean congue sed tincidunt nisl rhoncus est ut. A mollis justo convallis\ncongue odio dui dui ut Sed.</p>\n\n<p>Sapien turpis ac orci dui ac quis odio pretium malesuada Pellentesque. Purus\nsed pede dignissim sapien Curabitur sapien eros Pellentesque pretium convallis.\nLorem tortor id risus dui Curabitur parturient dolor Quisque nec Aenean. Orci\nlorem quis sit pellentesque orci id amet id auctor facilisis. Leo at gravida et\nelit vitae volutpat pretium fames at dictumst.</p>\n\n<p>Tincidunt at metus et Vestibulum id Maecenas Vestibulum eros consequat\ncursus. Faucibus semper pretium Nam et semper vitae et dui adipiscing id.\nFermentum odio eu sodales porttitor nec et ultrices fames quam Nulla. Quis in\npretium consequat enim tempor lacinia Pellentesque aliquam congue sem. Elit\ntincidunt tincidunt egestas senectus Fusce cursus id ut.</p>\n',	''),
 (5,	4,	'Lorem ipsum dolor sit amet consectetuer et pede interdum non augue. Faucibus in congue Quisque ac cursus et Vestibulum quis Maecenas pharetra. Curabitur elit fringilla accumsan quis natoque aliquam Maecenas et libero Vestibulum. Augue wisi tincidunt dis est accumsan porttitor tempus nulla Nulla montes. Quis Sed risus Aenean quis pede risus id.\r\n\r\nElit et tortor et parturient **condimentum Vivamus Donec** hendrerit nunc et. Justo Vivamus enim dolor elit ante eget Cum dis eros convallis. Curabitur In facilisi orci pretium Nunc Pellentesque condimentum lorem eros suscipit. Vivamus quis fames ut Sed Ut velit nunc tempus elit Aliquam. Tempus \"pellentesque lacus\":/osobni-promeny-kontakt/ Aenean congue sed tincidunt nisl rhoncus est ut. A mollis justo convallis congue odio dui dui ut Sed.\r\n\r\nSapien turpis ac orci dui ac quis odio pretium malesuada Pellentesque. Purus sed pede dignissim sapien Curabitur sapien eros Pellentesque pretium convallis. Lorem tortor id risus dui Curabitur parturient dolor Quisque nec Aenean. Orci lorem quis sit pellentesque orci id amet id auctor facilisis. Leo at gravida et elit vitae volutpat pretium fames at dictumst. \r\n\r\nTincidunt at metus et Vestibulum id Maecenas Vestibulum eros consequat cursus. Faucibus semper pretium Nam et semper vitae et dui adipiscing id. Fermentum odio eu sodales porttitor nec et ultrices fames quam Nulla. Quis in pretium consequat enim tempor lacinia Pellentesque aliquam congue sem. Elit tincidunt tincidunt egestas senectus Fusce cursus id ut.\r\n',	'',	'\n<p>Lorem ipsum dolor sit amet consectetuer et pede interdum non augue. Faucibus\nin congue Quisque ac cursus et Vestibulum quis Maecenas pharetra. Curabitur elit\nfringilla accumsan quis natoque aliquam Maecenas et libero Vestibulum. Augue\nwisi tincidunt dis est accumsan porttitor tempus nulla Nulla montes. Quis Sed\nrisus Aenean quis pede risus id.</p>\n\n<p>Elit et tortor et parturient <strong>condimentum Vivamus Donec</strong>\nhendrerit nunc et. Justo Vivamus enim dolor elit ante eget Cum dis eros\nconvallis. Curabitur In facilisi orci pretium Nunc Pellentesque condimentum\nlorem eros suscipit. Vivamus quis fames ut Sed Ut velit nunc tempus elit\nAliquam. Tempus <a href=\"/osobni-promeny-kontakt/\">pellentesque lacus</a> Aenean\ncongue sed tincidunt nisl rhoncus est ut. A mollis justo convallis congue odio\ndui dui ut Sed.</p>\n\n<p>Sapien turpis ac orci dui ac quis odio pretium malesuada Pellentesque. Purus\nsed pede dignissim sapien Curabitur sapien eros Pellentesque pretium convallis.\nLorem tortor id risus dui Curabitur parturient dolor Quisque nec Aenean. Orci\nlorem quis sit pellentesque orci id amet id auctor facilisis. Leo at gravida et\nelit vitae volutpat pretium fames at dictumst.</p>\n\n<p>Tincidunt at metus et Vestibulum id Maecenas Vestibulum eros consequat\ncursus. Faucibus semper pretium Nam et semper vitae et dui adipiscing id.\nFermentum odio eu sodales porttitor nec et ultrices fames quam Nulla. Quis in\npretium consequat enim tempor lacinia Pellentesque aliquam congue sem. Elit\ntincidunt tincidunt egestas senectus Fusce cursus id ut.</p>\n',	'');
 
--- 2015-04-09 14:03:31
+-- 2015-04-12 13:45:37
