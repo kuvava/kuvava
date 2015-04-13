@@ -1,0 +1,73 @@
+{block head}
+<style type="text/css">
+	div.inbl{
+		display: inline-block;
+		vertical-align: top;
+		margin-left: 1rem;
+	}
+	img{
+		margin-right: 2rem;
+	}
+</style>
+{/block head}
+{block scripts}
+{include parent}
+<script>
+	
+$(function(){
+	$('#nastroj1').mousedown(function(event){
+		event.preventDefault();
+		var mouseX = event.pageX;
+		var mouseY = event.pageY;
+		var foto = $('#nastroj1 img');
+		if (foto.hasClass('navysku')){
+			var smer = 'Y';
+			var property = 'bottom';
+			var souradnice = mouseY;
+			var rozmerCtverce = $('#nastroj1').height();
+			var rozmerFota = foto.height();
+		} else {
+			var smer = 'X';
+			var property = 'right';
+			var souradnice = mouseX;
+			var rozmerCtverce = $('#nastroj1').width();
+			var rozmerFota = foto.width();
+		}
+		var posun = parseInt(foto.css(property));
+		$('#nastroj1').bind('mousemove',function(event2){
+			if (smer === 'X'){
+				var actSouradnice = event2.pageX;
+			} else {
+				var actSouradnice = event2.pageY;
+			}
+			var rozdilSouradnic = souradnice - actSouradnice;
+			var novyPosun = posun + rozdilSouradnic;
+			if((rozmerFota >= (rozmerCtverce + novyPosun)) && (novyPosun >= 0)){
+				var novyPosunProcent = Math.round((novyPosun / rozmerCtverce) * 100);
+				foto.css(property, novyPosunProcent + '%');
+				$('#posunXY').text(novyPosunProcent);
+			}
+		});
+		$(window).mouseup(function(){
+			$('#nastroj1').unbind('mousemove');
+		});
+		return false;
+	});
+});
+	
+</script>
+{/block scripts}
+{block content}
+<h2>Posunout výřez fotografie</h2>
+<p>
+<strong><a href="/images/gallery/all/{block filename}{$row->id}.{$row->fileextension}{/block}" target="_blank">{include filename}</a></strong>:<br>
+{include '../components/photoMiniatur.latte', row => $row}<br><br>{include '../components/photoMiniatur.latte', row => $row, posunXY => ano, id => nastroj1}
+<div id="udaje" class="inbl">
+	Aktuální posun<br>
+	<strong>{if $row->tvar == 'nasirku'}DOLEVA{else}NAHORU{/if}:<br>
+	<span id="posunXY">{$row->nahled_posun}</span></strong><br>
+	(procent výřezového čtverce)
+	
+</div>
+<div class="inbl"><a n:href="Nastroje:zobrazVsechnyFoto" class="but">Zpět bez uložení</a></div>
+</p>

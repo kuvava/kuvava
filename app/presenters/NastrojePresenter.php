@@ -128,5 +128,15 @@ class NastrojePresenter extends BasePresenter
 	{
 		$this->template->tabulkaFotek = $this->database->table('vsechny_fotky');
 	}
+	public function renderPosunoutVyrezFotky($photoId)
+	{
+		$row = $this->database->table('vsechny_fotky')->get($photoId);
+		if ($row->tvar == 'ctverec') {
+			$this->flashMessage('U fotografie čtvercového tvaru ('. $photoId . '.' . $row->fileextension .') nelze posunovat výřezem.','fr');
+			$this->redirect('Nastroje:zobrazVsechnyFoto');
+		} else {
+			$this->template->row = $row;
+		}
+	}
 
 }

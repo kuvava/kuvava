@@ -3,8 +3,11 @@ col1			jeden sloupeček na celou šířku
 col2			jeden sloupeček na polovinu šířky
 col3			jeden sloupeček na třetinu šířky
 col4			jeden sloupeček na čtvrtinu šířky
+ctverec			orientace obrázku (záznam v databázi -> table `vsechny_fotky` -> column `tvar`)
 e1 až e99		první až devedesátý devátý element (slouží pro jquery selektory)
 fr				flash-red = červená vyskakovací zpráva
 js				detekce javascriptu: html.js
+nasirku			orientace obrázku (záznam v databázi -> table `vsechny_fotky` -> column `tvar`)
+navysku			orientace obrázku (záznam v databázi -> table `vsechny_fotky` -> column `tvar`)
 prev			overflow hidden div -> window for thumbnails
 tac				"text-align: center;"

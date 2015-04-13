@@ -1,21 +1,12 @@
 {block head}
 <style type="text/css">
-	.prev{
+	a.but, div.inbl {
 		display: inline-block;
-		width: 200px;
-		height: 200px;
-		overflow: hidden;
+		vertical-align: top;
+		margin-left: 1rem;
 	}
-	.prev img.nasirku{
-		height: 100%;
-		width: auto;
-	}
-	.prev img.navysku{
-		height: auto;
-		width: 100%;
-	}
-	.prev img{
-		position: relative;
+	img{
+		margin-right: 2rem;
 	}
 </style>
 {/block head}
@@ -23,7 +14,7 @@
 <h2>Přehled všech fotografií</h2>
 <ul n:foreach="$tabulkaFotek as $row">
 	<li>
-		<strong>{block filename}{$row->id}.{$row->fileextension}{/block}</strong>:<br>
-		{block miniatura}<img src="/images/gallery/all/thumbs/s/{include filename}" class="{$row->tvar}"{ifset $posunXY}{if $row->tvar != ctverec}style="{$row->tvar === nasirku ? right : bottom}: {$row->nahled_posun}px"{/if}{/ifset}>{/block} &nbsp;&nbsp;&nbsp; <div class="prev">{include miniatura, $posunXY = ano}</div>
+		<strong><a href="/images/gallery/all/{block filename}{$row->id}.{$row->fileextension}{/block}" target="_blank">{include filename}</a></strong>:<br>
+		 {include '../components/photoMiniatur.latte', row => $row}{include '../components/photoMiniatur.latte', row => $row, posunXY => ano} {if $row->tvar != ctverec}<a n:href="Nastroje:posunoutVyrezFotky, $row->id" class="but">Posunout výřez</a>{else}<div class="inbl">U fotografie čtvercového tvaru, nelze posunovat výřezem náhledu.</div>{/if} 
 	</li>
 </ul>

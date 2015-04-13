@@ -8,13 +8,17 @@ line-height:1;}
 font-size:0.8em;font-size:0.8rem;}
 #user{
 position: absolute}
+.prev img{
+position: relative;}
 #user{
 right:0px;
 top:0px;}
 #but1,#but1 .e2{
 display: none;}
-menu a,.but,#user{
+menu a,.but,#user,.prev{
 display: inline-block;}
+.prev{
+overflow:hidden;}
 menu{
 list-style-type:none;}
 h1{
@@ -39,10 +43,17 @@ max-width:45em;max-width:60rem;}
 max-width:53em;max-width:53rem;}
 body{
 min-width:750px;}
+.prev img.nasirku{
+height: 100%;width: auto;}
+.prev img.navysku{
+width: 100%;height: auto;}
 menu a{
 width: 16.666666666666%;}
 #but1{
 width:8em;width:12rem;}
+.prev{
+width: 200px;
+height: 200px;}
 h1,menu,.but{
 font-weight:bold;}
 h1 a,menu a,a{
