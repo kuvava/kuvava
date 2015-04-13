@@ -138,5 +138,11 @@ class NastrojePresenter extends BasePresenter
 			$this->template->row = $row;
 		}
 	}
+	public function ActionUlozPosunutiVyrezu($photoId,$procentPosunu)
+	{
+		$this->database->table('vsechny_fotky')->get($photoId)->update(array('nahled_posun'=>$procentPosunu));
+		$this->flashMessage('Uložení hodnoty ' . $procentPosunu . '% bylo úšpěšné (posun výřezu miniatury fotografie číslo '. $photoId . ')');
+		$this->redirect('Nastroje:zobrazVsechnyFoto');
+	}
 
 }
