@@ -47,6 +47,9 @@
 </div>
 </div>
 
+{ifset $galleryTable}
+{include 'components/photoswipeGUI.latte'}
+{/ifset}
 <div id="test"></div>
 {block scripts}
 <!--[if lt IE 9]><script src="http://code.jquery.com/jquery-1.11.2.min.js"></script><![endif]-->
@@ -54,7 +57,7 @@
 <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 <![endif]>
 <script src="http://nette.github.io/resources/js/netteForms.min.js"></script>
-<script src="{$basePath}/js/my-1-0-3.js"></script>
+<script src="{$basePath}/js/my-1-0-4.js"></script>
 {/block}
 </body>
 </html>
