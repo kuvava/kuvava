@@ -73,8 +73,20 @@ $('a.phgal').each(function(){
 	}
 	pswpItems.push(item);	
 });
+var pswpOptions = {
+	index: 0, 
+	shareEl: false,
+	getThumbBoundsFn: function(index) {
+			var thumbnail = pswpItems[index].el;
+			var offset = thumbnail.offset();
+			var xCoord = offset.left;
+			var yCoord = offset.top;
+			var thumbWidth = thumbnail.width();
+			return {x:xCoord, y:yCoord, w:thumbWidth};
+		}
+	};
 
-var pswpOptions = {index: 0};
+
 $('a.phgal').click(function(event){
 	event.preventDefault();
 	pswpOptions['index'] = $(this).data('gallid') - 1;
@@ -82,5 +94,42 @@ $('a.phgal').click(function(event){
 	galleryBox.init();
 	return false;
 });
+
+var photoswipeParseHash = function() {
+        var hash = window.location.hash.substring(1),
+        params = {};
+
+        if(hash.length < 5) {
+            return params;
+        }
+
+        var vars = hash.split('&');
+        for (var i = 0; i < vars.length; i++) {
+            if(!vars[i]) {
+                continue;
+            }
+            var pair = vars[i].split('=');  
+            if(pair.length < 2) {
+                continue;
+            }           
+            params[pair[0]] = pair[1];
+        }
+
+        if(params.gid) {
+            params.gid = parseInt(params.gid, 10);
+        }
+
+        if(!params.hasOwnProperty('pid')) {
+            return params;
+        }
+        params.pid = parseInt(params.pid, 10);
+        return params;
+    };
+var pswpHashData = photoswipeParseHash();
+    if(pswpHashData.pid > 0 && pswpHashData.gid > 0) {
+    	pswpOptions.index = pswpHashData.pid - 1;
+        var galleryBox = new PhotoSwipe( pswpEl, PhotoSwipeUI_Default, pswpItems, pswpOptions);
+		galleryBox.init();
+    }
 
 });
