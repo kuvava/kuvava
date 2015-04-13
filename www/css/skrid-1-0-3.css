@@ -15,25 +15,27 @@ right:0px;
 top:0px;}
 #but1,#but1 .e2{
 display: none;}
-menu a,.but,#user,.prev{
+menu a,.but,#user,.prev,#phgal li{
 display: inline-block;}
 .prev{
 overflow:hidden;}
-menu{
+menu,#phgal{
 list-style-type:none;}
 h1{
 font-size:2.5em;font-size:2.5rem;}
 menu,.but{
 font-size:1.5em;font-size:1.5rem;}
-body,h1,menu{
+body,h1,menu,#phgal{
 margin: 0;}
 menu,.but,#text .col1{
 margin-left:auto;margin-right:auto;}
-menu{
+#phgal{
+margin-top:3em;margin-top:3rem;}
+menu,#phgal{
 padding:0;}
 .but{
 padding:0.3em;padding: 0rem 1rem 0.1rem 1rem;}
-body{
+body,#phgal li{
 padding:0.5em;padding:0.5rem;}
 #text{
 padding-top: 0.5em;padding-top: 0.5rem;}
@@ -43,10 +45,12 @@ max-width:45em;max-width:60rem;}
 max-width:53em;max-width:53rem;}
 body{
 min-width:750px;}
-.prev img.nasirku{
-height: 100%;width: auto;}
+.prev img.nasirku,#phgal{
+height:100%;width: auto;}
 .prev img.navysku{
-width: 100%;height: auto;}
+width:100%;height: auto;}
+.prev img.ctverec{
+width:100%;height:100%;}
 menu a{
 width: 16.666666666666%;}
 #but1{
@@ -58,8 +62,10 @@ h1,menu,.but{
 font-weight:bold;}
 h1 a,menu a,a{
 text-decoration:none;}
-h1,h2,h3,menu li,.but,.tac{
+h1,h2,h3,menu li,.but,.tac,#phgal{
 text-align:center;}
+p{
+text-align: justify;}
 body{
 background-color:#ffffff;}
 h1 a,menu li,.but{

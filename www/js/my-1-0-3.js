@@ -19,6 +19,20 @@ function clickBut1(){
 }
 $(function(){
 var procesMenuAResize = false;
+var gallThumbUrl = '';
+var gallImgSize = 'xl';
+var scrMax = Math.max(screen.width,screen.height);
+var devPixRat = (devicePixelRatio in window ? window.devicePixelRatio : 1);
+var scrMaxRes = scrMax * devPixRat;
+if (scrMaxRes > 800 && scrMaxRes <= 1200) { gallImgSize = 'l'; gallThumbUrl = 'thumbs/l/';}
+else if (scrMaxRes <= 800) { gallImgSize = 'm'; gallThumbUrl = 'thumbs/m/';}
+$('a.phgal').each(function(){
+	$(this).attr('href', function(){
+		var filename = $(this).data('filename');
+		return '/images/gallery/all/' + gallThumbUrl + filename;
+	});
+	$(this).attr('data-sizecat', gallImgSize);
+});
 $('#but1').click(function(){clickBut1();});
 $(window).resize(function() {
 	if ($('#but1 .e1').hasClass('clicked') && ((($('#test').width() > 11) && $('#ma').is(':hidden')) || (($('#test').width() <= 11) && $('#ma').is(':visible')))){
