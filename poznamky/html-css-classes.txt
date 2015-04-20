@@ -6,9 +6,10 @@ col4			jeden sloupeček na čtvrtinu šířky
 ctverec			orientace obrázku (záznam v databázi -> table `vsechny_fotky` -> column `tvar`)
 e1 až e99		první až devedesátý devátý element (slouží pro jquery selektory)
 fr				flash-red = červená vyskakovací zpráva
+gala			odkazy obalující obrázky, které patří do fotogalerie
+galul			seznam obalující jeden set photoswipe fotogalerie
 js				detekce javascriptu: html.js
 nasirku			orientace obrázku (záznam v databázi -> table `vsechny_fotky` -> column `tvar`)
 navysku			orientace obrázku (záznam v databázi -> table `vsechny_fotky` -> column `tvar`)
-phgal			odkazy obalující obrázky, které patří do fotogalerie
 prev			overflow hidden div -> window for thumbnails
 tac				"text-align: center;"
