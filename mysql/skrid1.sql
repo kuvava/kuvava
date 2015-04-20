@@ -99,4 +99,4 @@ CREATE TABLE `zaloha_obsah` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
 
 
--- 2015-04-20 16:53:04
+-- 2015-04-20 19:10:26
