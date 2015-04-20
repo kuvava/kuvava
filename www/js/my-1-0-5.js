@@ -52,29 +52,33 @@ $(window).resize(function() {
 });
 
 var pswpEl = document.querySelectorAll('.pswp')[0];
-var pswpItems = [];
-$('a.gala').each(function(){
-	var sizeCat = $(this).data('sizecat'),
-	href		= $(this).attr('href'),
-	size		= $(this).data(sizeCat + 'size').split('x'),
-	width		= size[0],
-	height		= size[1],
-	text		= $(this).attr('title'),
-	animEl		= $(this).find('img'),
-	placeholder = animEl.attr('src');
+var pswpGetItems = function (aItem){
+	var pswpItems = [];
+	aItem.siblings('a.gala').addBack().each(function(){
+		var sizeCat = $(this).data('sizecat'),
+			href		= $(this).attr('href'),
+			size		= $(this).data(sizeCat + 'size').split('x'),
+			width		= size[0],
+			height		= size[1],
+			text		= $(this).attr('title'),
+			animEl		= $(this).find('img'),
+			placeholder = animEl.attr('src');
 
-	var item = {
-		src		: href,
-		w		: width,
-		h		: height,
-		title	: text,
-		msrc	: placeholder,
-		el		: animEl
-	}
-	pswpItems.push(item);	
-});
+		var item = {
+			src		: href,
+			w		: width,
+			h		: height,
+			title	: text,
+			msrc	: placeholder,
+			el		: animEl
+		}
+		pswpItems.push(item);
+	});
+	return pswpItems;
+}
 var pswpOptions = {
-	index: 0, 
+	index: 0,
+	galleryUID: 1, 
 	shareEl: false,
 	getThumbBoundsFn: function(index) {
 			var thumbnail = pswpItems[index].el;
@@ -89,47 +93,52 @@ var pswpOptions = {
 
 $('a.gala').click(function(event){
 	event.preventDefault();
+	pswpOptions['galleryUID'] = $(this).parents('ul.galul').data('gallulid');
 	pswpOptions['index'] = $(this).data('gallid') - 1;
+	pswpItems = pswpGetItems($(this));
 	var galleryBox = new PhotoSwipe( pswpEl, PhotoSwipeUI_Default, pswpItems, pswpOptions);
 	galleryBox.init();
 	return false;
 });
 
 var photoswipeParseHash = function() {
-        var hash = window.location.hash.substring(1),
-        params = {};
+	var hash = window.location.hash.substring(1),
+	params = {};
 
-        if(hash.length < 5) {
-            return params;
-        }
+	if(hash.length < 5) {
+		return params;
+	}
 
-        var vars = hash.split('&');
-        for (var i = 0; i < vars.length; i++) {
-            if(!vars[i]) {
-                continue;
-            }
-            var pair = vars[i].split('=');  
-            if(pair.length < 2) {
-                continue;
-            }           
-            params[pair[0]] = pair[1];
-        }
+	var vars = hash.split('&');
+	for (var i = 0; i < vars.length; i++) {
+		if(!vars[i]) {
+			continue;
+		}
+		var pair = vars[i].split('=');  
+		if(pair.length < 2) {
+			continue;
+		}
+		params[pair[0]] = pair[1];
+	}
 
-        if(params.gid) {
-            params.gid = parseInt(params.gid, 10);
-        }
+	if(params.gid) {
+		params.gid = parseInt(params.gid, 10);
+	}
 
-        if(!params.hasOwnProperty('pid')) {
-            return params;
-        }
-        params.pid = parseInt(params.pid, 10);
-        return params;
-    };
+	if(!params.hasOwnProperty('pid')) {
+		return params;
+	}
+	params.pid = parseInt(params.pid, 10);
+	return params;
+};
 var pswpHashData = photoswipeParseHash();
-    if(pswpHashData.pid > 0 && pswpHashData.gid > 0) {
-    	pswpOptions.index = pswpHashData.pid - 1;
-        var galleryBox = new PhotoSwipe( pswpEl, PhotoSwipeUI_Default, pswpItems, pswpOptions);
+	if(pswpHashData.pid > 0 && pswpHashData.gid > 0) {
+		pswpOptions.index = pswpHashData.pid - 1;
+		pswpOptions.galleryUID = pswpHashData.gid;
+		var pswpItemsSelector = 'ul.galul[data-gallulid="' + pswpHashData.gid + '"] a.gala';
+		var pswpItems = pswpGetItems($(pswpItemsSelector).first());
+		var galleryBox = new PhotoSwipe( pswpEl, PhotoSwipeUI_Default, pswpItems, pswpOptions);
 		galleryBox.init();
-    }
+	}
 
 });
