@@ -1,6 +1,16 @@
-<div class="col1" n:ifset="$stranka->obsah_html_nahore">
-{$stranka->obsah_html_nahore|noescape}
+{layout ''}
+{foreach $casti as $fragment}
+{if $fragment->galerie_skupina_fotek_id == NULL}
+<div class="col{$fragment->pocet_sloupcu}">
+{$htmlFragmenty[$fragment->id]|noescape}
 </div>
-{ifset $galleryTable, $galleryAttrAlt}
-{include 'photoGallery.latte', galleryTable => $galleryTable, galleryAttrAlt => $galleryAttrAlt}
-{/ifset}
+{else}
+{var $galUrTable = $fragment->ref('galerie_skupina_fotek')}
+{if $galUrTable}
+{var $galTable = $galUrTable->related('galerie_prirazene_polozky')->order('poradi, id')}
+{var $galAttrAlt = $galUrTable->googlepopis_automatizovane}
+{include 'photoGallery.latte', galleryTable => $galTable, galleryAttrAlt => $galAttrAlt}
+{/if}
+{/if}
+{/foreach}
+{block content}

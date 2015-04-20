@@ -43,14 +43,6 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 	{
 		if (!in_array($this->name, array('Error','Nastroje','Sign'), TRUE)){
 			$this->template->stranka = $this->getStranka();
-			$galleryUrTable = $this->template->stranka->ref('galerie_skupina_fotek');
-			if ($galleryUrTable) {
-				$galleryTable = $galleryUrTable->related('galerie_prirazene_polozky')->order('poradi, id');
-				if ($galleryTable && ($galleryTable->count() > 0)) {
-					$this->template->galleryTable = $galleryTable;
-					$this->template->galleryAttrAlt = $galleryUrTable->googlepopis_automatizovane;
-				}
-			}
 		}
 	}
 }

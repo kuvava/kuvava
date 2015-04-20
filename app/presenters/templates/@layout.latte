@@ -35,7 +35,9 @@
 {/block flash}
 
 <div id="text">
-{include 'components/renderMainContent.latte'}
+{ifset $stranka->obsah_html_nahore}
+{$stranka->obsah_html_nahore|noescape}
+{/ifset}
 <div class="col1">
 {include content}
 </div>
@@ -44,8 +46,10 @@
 </div>
 </div>
 
-{ifset $galleryTable}
+{ifset $stranka->obsahuje_galerii}
+{if $stranka->obsahuje_galerii != 'ne'}
 {include 'components/photoswipeGUI.latte'}
+{/if}
 {/ifset}
 <div id="test"></div>
 {block scripts}

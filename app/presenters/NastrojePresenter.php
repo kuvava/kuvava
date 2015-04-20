@@ -31,34 +31,38 @@ class NastrojePresenter extends BasePresenter
 		if ($zmeneneStranky->count() > 0) {
 			$texy = new \Texy;
 			$texy->headingModule->top = 2;
+			$now = new Nette\DateTime;
 			foreach ($zmeneneStranky as $stranka){
+				$obsahujeGalerii = 'ne';
 				$fragmentHtml = array();
-				$castiStranky = $stranka->related('editor_obsahu_stranky');
+				$castiStranky = $stranka->related('editor_obsahu_stranky')->order('poradi, id');
 				if ($castiStranky->count() > 0) {
 					foreach ($castiStranky as $fragment) {
 						$zaloha = array();
-						if ($fragment->galerie_skupina_fotek_id != NULL) {
+						if ($fragment->galerie_skupina_fotek_id == NULL) {
 							$zaloha = array(
 								'editor_obsahu_stranky_id' => $fragment->id,
 								'stranka_id' => $fragment->stranka_id,
 								'poradi' => $fragment->poradi,
 								'pocet_sloupcu' => $fragment->pocet_sloupcu,
-								'texy' => $fragment->obsah_texy
+								'texy' => $fragment->obsah_texy,
+								'datum' => $now
 							);
 							$this->database->table('zaloha_obsah')->insert($zaloha);
 							$fragmentHtml[$fragment->id] = $texy->process($fragment->obsah_texy);
+						} else {
+							$obsahujeGalerii = 'ano';
 						}	
 					}
 					$tempTemplate = NULL;
 					$tempTemplate = $this->createTemplate()
-						->setFile(__DIR__ . 'templates/components/renderMainContent.latte',
-							array('casti' => $castiStranky, 'htmlFragmenty' => $fragmentHtml)
-						);
-					$stranka->update(array(
-						'obsah_html_nahore' => $tempTemplate
-					));
+						->setFile(__DIR__ . '/templates/components/renderMainContent.latte')
+						->setParameters(array('casti' => $castiStranky, 'htmlFragmenty' => $fragmentHtml));
+					$tempTemplate = (string)$tempTemplate;
+					$stranka->update(array('obsah_html_nahore' => $tempTemplate));
 				}
-				$stranka->update(array('editor_zmeneno' => 'ne'));
+				$this->flashMessage('Upravena stránka id ' . $stranka->id);
+				$stranka->update(array('obsahuje_galerii' => $obsahujeGalerii , 'editor_zmeneno' => 'ne'));
 			}
 		}
 		
