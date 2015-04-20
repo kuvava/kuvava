@@ -127,10 +127,15 @@ class NastrojePresenter extends BasePresenter
 	public function renderZobrazVsechnyFoto()
 	{
 		$this->template->tabulkaFotek = $this->database->table('vsechny_fotky');
+		$this->template->flashUId = $this->getParameter('flashUId');
 	}
 	public function renderPosunoutVyrezFotky($photoId)
 	{
 		$row = $this->database->table('vsechny_fotky')->get($photoId);
+		if (!$row){
+			$this->flashMessage('Fotografii číslo ' . $photoId . ' nelze v databázi nalézt.', 'fr');
+			$this->redirect('Nastroje:zobrazVsechnyFoto');
+		}
 		if ($row->tvar == 'ctverec') {
 			$this->flashMessage('U fotografie čtvercového tvaru ('. $photoId . '.' . $row->fileextension .') nelze posunovat výřezem.','fr');
 			$this->redirect('Nastroje:zobrazVsechnyFoto');
@@ -140,9 +145,14 @@ class NastrojePresenter extends BasePresenter
 	}
 	public function ActionUlozPosunutiVyrezu($photoId,$procentPosunu)
 	{
-		$this->database->table('vsechny_fotky')->get($photoId)->update(array('nahled_posun'=>$procentPosunu));
+		$row = $this->database->table('vsechny_fotky')->get($photoId);
+		if (!$row){
+			$this->flashMessage('Fotografii číslo ' . $photoId . ' nelze v databázi nalézt.', 'fr');
+			$this->redirect('Nastroje:zobrazVsechnyFoto');
+		}
+		$row->update(array('nahled_posun'=>$procentPosunu));
 		$this->flashMessage('Uložení hodnoty ' . $procentPosunu . '% bylo úšpěšné (posun výřezu miniatury fotografie číslo '. $photoId . ')');
-		$this->redirect('Nastroje:zobrazVsechnyFoto');
+		$this->redirect('Nastroje:zobrazVsechnyFoto#photoid' . $photoId, array('flashUId' => $photoId));
 	}
 
 }

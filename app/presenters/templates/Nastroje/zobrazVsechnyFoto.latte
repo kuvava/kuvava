@@ -13,8 +13,9 @@
 {block content}
 <h2>Přehled všech fotografií</h2>
 <ul n:foreach="$tabulkaFotek as $row">
-	<li>
+	<li id="photoid{$row->id}">
 		<strong><a href="/images/gallery/all/{block filename}{$row->id}.{$row->fileextension}{/block}" target="_blank">{include filename}</a></strong>:<br>
-		 {include '../components/photoMiniatur.latte', row => $row}{include '../components/photoMiniatur.latte', row => $row, posunXY => ano} {if $row->tvar != ctverec}<a n:href="Nastroje:posunoutVyrezFotky, $row->id" class="but">Posunout výřez</a>{else}<div class="inbl">U fotografie čtvercového tvaru, nelze posunovat výřezem náhledu.</div>{/if} 
+		{if $row->id == $flashUId}{include flash}{/if}
+		{include '../components/photoMiniatur.latte', row => $row}{include '../components/photoMiniatur.latte', row => $row, posunXY => ano} {if $row->tvar != ctverec}<a n:href="Nastroje:posunoutVyrezFotky, $row->id" class="but">Posunout výřez</a>{else}<div class="inbl">U fotografie čtvercového tvaru, nelze posunovat výřezem náhledu.</div>{/if} 
 	</li>
 </ul>

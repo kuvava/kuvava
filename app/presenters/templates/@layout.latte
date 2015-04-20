@@ -30,7 +30,9 @@
 <div class="tac"><div id="but1" class="but">&nbsp;<span class="e1">Zobrazit menu</span>&nbsp;</div></div>
 <menu id="ma"><a href="/zmena-image-muze/"><li id="ma7">Pro pány</li></a><a href="/zmena-image-zeny/"><li  id="ma6">Pro dámy</li></a><a href="/promena-vzhledu/"><li id="ma5">Ukázky</li></a><a href="/moderni-promena-vizaze/"><li id="ma3">Aktuality</li></a><a href="/team-vizaz-foceni/"><li id="ma4">Náš tým</li></a><a href="/osobni-promeny-kontakt/"><li id="ma2">Kontakt</li></a></menu>
 
+{block flash}
 <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message|noescape}</div>
+{/block flash}
 
 <div id="text">
 <div class="col1" n:ifset="$stranka->obsah_html_nahore">
