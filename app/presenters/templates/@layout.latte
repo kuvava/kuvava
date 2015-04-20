@@ -35,15 +35,10 @@
 {/block flash}
 
 <div id="text">
-<div class="col1" n:ifset="$stranka->obsah_html_nahore">
-{$stranka->obsah_html_nahore|noescape}
-</div>
+{include 'components/renderMainContent.latte'}
 <div class="col1">
 {include content}
 </div>
-{ifset $galleryTable, $galleryAttrAlt}
-{include 'components/photoGallery.latte', galleryTable => $galleryTable, galleryAttrAlt => $galleryAttrAlt}
-{/ifset}
 <div class="col1" n:ifset="$stranka->obsah_html_dole">
 {$stranka->obsah_html_dole|noescape}
 </div>

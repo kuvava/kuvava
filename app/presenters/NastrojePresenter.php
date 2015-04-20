@@ -23,6 +23,46 @@ class NastrojePresenter extends BasePresenter
 			$this->redirect('Sign:in');
 		}
 	}
+	public function beforeRender()
+	{
+		parent::beforeRender();
+		$zmeneneStranky = $this->database->table('stranka')->where('editor_zmeneno != ?', 'ne');
+		\Tracy\Debugger::barDump($zmeneneStranky->count());
+		if ($zmeneneStranky->count() > 0) {
+			$texy = new \Texy;
+			$texy->headingModule->top = 2;
+			foreach ($zmeneneStranky as $stranka){
+				$fragmentHtml = array();
+				$castiStranky = $stranka->related('editor_obsahu_stranky');
+				if ($castiStranky->count() > 0) {
+					foreach ($castiStranky as $fragment) {
+						$zaloha = array();
+						if ($fragment->galerie_skupina_fotek_id != NULL) {
+							$zaloha = array(
+								'editor_obsahu_stranky_id' => $fragment->id,
+								'stranka_id' => $fragment->stranka_id,
+								'poradi' => $fragment->poradi,
+								'pocet_sloupcu' => $fragment->pocet_sloupcu,
+								'texy' => $fragment->obsah_texy
+							);
+							$this->database->table('zaloha_obsah')->insert($zaloha);
+							$fragmentHtml[$fragment->id] = $texy->process($fragment->obsah_texy);
+						}	
+					}
+					$tempTemplate = NULL;
+					$tempTemplate = $this->createTemplate()
+						->setFile(__DIR__ . 'templates/components/renderMainContent.latte',
+							array('casti' => $castiStranky, 'htmlFragmenty' => $fragmentHtml)
+						);
+					$stranka->update(array(
+						'obsah_html_nahore' => $tempTemplate
+					));
+				}
+				$stranka->update(array('editor_zmeneno' => 'ne'));
+			}
+		}
+		
+	}
 	
 	public function actionZpracujFotky()
 	{
