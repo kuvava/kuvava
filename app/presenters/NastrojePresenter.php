@@ -39,16 +39,32 @@ class NastrojePresenter extends BasePresenter
 				if ($castiStranky->count() > 0) {
 					foreach ($castiStranky as $fragment) {
 						$zaloha = array();
+						$posledniZalohaTexy = NULL;
 						if ($fragment->galerie_skupina_fotek_id == NULL) {
-							$zaloha = array(
-								'editor_obsahu_stranky_id' => $fragment->id,
-								'stranka_id' => $fragment->stranka_id,
-								'poradi' => $fragment->poradi,
-								'pocet_sloupcu' => $fragment->pocet_sloupcu,
-								'texy' => $fragment->obsah_texy,
-								'datum' => $now
-							);
-							$this->database->table('zaloha_obsah')->insert($zaloha);
+							$posledniZaloha = $this->database->table('zaloha_obsah')
+								->where('editor_obsahu_stranky_id = ?', $fragment->id)
+								->order('id DESC')
+								->limit(1)
+								->fetch();
+							if ($posledniZaloha) {
+								$posledniZalohaTexy = $posledniZaloha->texy;
+							} else {
+								$posledniZalohaTexy = NULL;
+							}
+							$posledniZaloha = NULL;
+							if ($posledniZalohaTexy != $fragment->obsah_texy){
+								$zaloha = array(
+									'editor_obsahu_stranky_id' => $fragment->id,
+									'stranka_id' => $fragment->stranka_id,
+									'poradi' => $fragment->poradi,
+									'pocet_sloupcu' => $fragment->pocet_sloupcu,
+									'texy' => $fragment->obsah_texy,
+									'datum' => $now
+								);
+								$this->database->table('zaloha_obsah')->insert($zaloha);
+							}
+							$posledniZalohaTexy = NULL;
+							$zaloha = array();
 							$fragmentHtml[$fragment->id] = $texy->process($fragment->obsah_texy);
 						} else {
 							$obsahujeGalerii = 'ano';
@@ -66,6 +82,12 @@ class NastrojePresenter extends BasePresenter
 			}
 		}
 		
+	}
+	
+	public function actionPregenerujObsah()
+	{
+		$this->database->table('stranka')->update(array('editor_zmeneno' => 'ano'));
+		$this->redirect('Nastroje:');
 	}
 	
 	public function actionZpracujFotky()
