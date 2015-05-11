@@ -78,9 +78,9 @@ h1,menu,.but{
 font-weight:bold;}
 h1 a,menu a,a{
 text-decoration:none;}
-h1,h2,h3,menu li,.but,.tac,ul.galul,#text{
+h1,h2,h3,menu li,.but,.tac,#text ul.galul,#text{
 text-align:center;}
-p{
+p,#text ul{
 text-align: justify;}
 .col2,.col3,.col4{
 vertical-align:top;}
