@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Language" content="cs">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<meta name="robots" content="{$robots}" n:ifset="$robots">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{ifset $stranka->googletitulek}{$stranka->googletitulek}{else}{include titleTagSlogan}{/ifset} | {include titleTagWeb}</title>
+<meta name="description" content="{$stranka->googlepopisek}" n:ifset="$stranka->googlepopisek">
+
+<link rel="stylesheet" href="{$basePath}/css/{include cssFileName}-{include cssFileVersion}.css">
+<link rel="shortcut icon" href="{$basePath}/favicon{include faviconVersion}.ico">
+
+<!--[if lt IE 9]><script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
+{ifset #menuSelectors}<style type="text/css">{include menuSelectors} { {include activeMenuStyle}}</style>{/ifset}
+{block head}{/block}
+</head>
+
+
+<body>
+<script> document.documentElement.className+=' js' </script>
+<div n:if="$user->loggedIn" id="user">
+		Přihlášený uživatel:<br><strong>{$user->getId()}</strong> {if $user->isInRole('admin')}(administrátor)<br>{/if}
+		<a n:href="Sign:out"><strong>Odhlásit se</strong></a> &nbsp;&nbsp; <a n:href="Nastroje:" n:if="$user->isInRole('admin')"><strong>Nástroje</strong></a>
+</div>
+
+{include mainMenu}
+
+{block flash}
+<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message|noescape}</div>
+{/block flash}
+
+<div id="text">
+{ifset $stranka->obsah_html_nahore}
+{$stranka->obsah_html_nahore|noescape}
+{/ifset}
+<div class="col1">
+{include content}
+</div>
+<div class="col1" n:ifset="$stranka->obsah_html_dole">
+{$stranka->obsah_html_dole|noescape}
+</div>
+</div>
+
+{ifset $stranka->obsahuje_galerii}
+{if $stranka->obsahuje_galerii != 'ne'}
+{include 'components/photoswipeGUI.latte'}
+{/if}
+{/ifset}
+<div id="test"></div>
+{block scripts}
+<!--[if lt IE 9]><script src="http://code.jquery.com/jquery-1.11.2.min.js"></script><![endif]-->
+<![if gt IE 8]>
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<![endif]>
+<script src="http://nette.github.io/resources/js/netteForms.min.js"></script>
+<script src="{$basePath}/js/my-1-0-5.js"></script>
+{/block}
+</body>
+</html>
