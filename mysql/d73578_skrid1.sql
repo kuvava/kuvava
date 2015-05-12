@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Počítač: wm67.wedos.net:3306
--- Vygenerováno: Pon 11. kvě 2015, 11:06
+-- Vygenerováno: Pon 11. kvě 2015, 19:49
 -- Verze serveru: 5.6.17
 -- Verze PHP: 5.4.23
 
