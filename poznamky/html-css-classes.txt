@@ -15,3 +15,5 @@ odznova			vyresetování css vlastnosti float
 prev			overflow hidden div -> window for thumbnails
 tac				"text-align: center;"
 texy			obrázky generované pomocí texy
+tifl			texy image float left
+tifr			texy image float right

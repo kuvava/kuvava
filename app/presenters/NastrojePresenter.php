@@ -32,6 +32,8 @@ class NastrojePresenter extends BasePresenter
 			$texy = new \Texy;
 			$texy->headingModule->top = 2;
 			$texy->imageModule->root  = '/images/main-content/';
+			$texy->imageModule->leftClass  = 'tifl';
+			$texy->imageModule->rightClass  = 'tifr';
 			$now = new Nette\DateTime;
 			foreach ($zmeneneStranky as $stranka){
 				$obsahujeGalerii = 'ne';
