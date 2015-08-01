@@ -1,6 +1,7 @@
 #but1			button1 (skrývá a okdrývá menu při úzké šířce displaye)
 #but2			button2 (v NastrojePresenter) spouští (přesměrovává) zpracovávání fotek do galerie
 #but2u1			utilita pro button2 (input s kopií hesla)
+#cr				copyright (v patičce)
 #ma				menu a (hlavní nahoře)
 #ma0 až #ma6	položky menu a
 #test			testovací div - spáruje mediaqueries a jquery
