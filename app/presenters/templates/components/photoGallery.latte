@@ -2,7 +2,7 @@
 {var $photoRow = $row->ref('vsechny_fotky')}
 	<a href="/images/gallery/all/{block filename}{$photoRow->id}.{$photoRow->fileextension}{/block}" target="_blank" class="gala" title="{$photoRow->gallery_text}" data-xlsize="{$photoRow->width}x{$photoRow->height}" data-lsize="{$photoRow->l_width}x{$photoRow->l_height}" data-msize="{$photoRow->m_width}x{$photoRow->m_height}" data-ssize="{$photoRow->s_width}x{$photoRow->s_height}" data-sizecat="xl" data-filename="{include filename}" data-gallId="{$iterator->getCounter()}">
 		<li>
-			{include 'photoMiniatur.latte', row => $photoRow, posunXY => ano}
+			{include 'photoMiniatur.latte', row => $photoRow, posunXY => ano, attrAlt => App\Model\MyUtils::fillVar($photoRow->googlepopis,$galleryAttrAlt)}
 		</li>
 	</a>
 </ul>
