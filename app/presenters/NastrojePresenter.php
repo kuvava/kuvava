@@ -37,6 +37,7 @@ class NastrojePresenter extends BasePresenter
 			$now = new Nette\DateTime;
 			foreach ($zmeneneStranky as $stranka){
 				$obsahujeGalerii = 'ne';
+				$tempTemplate = NULL;
 				$fragmentHtml = array();
 				$castiStranky = $stranka->related('editor_obsahu_stranky')->order('poradi, id');
 				if ($castiStranky->count() > 0) {
@@ -78,10 +79,36 @@ class NastrojePresenter extends BasePresenter
 						->setFile(__DIR__ . '/templates/components/renderMainContent.latte')
 						->setParameters(array('casti' => $castiStranky, 'htmlFragmenty' => $fragmentHtml));
 					$tempTemplate = (string)$tempTemplate;
-					$stranka->update(array('obsah_html_nahore' => $tempTemplate));
 				}
+				$bigTemplate = NULL;
+				$bigTemplate = $this->createTemplate()
+						->setFile(__DIR__ . '/templates/components/renderStandardPage.latte')
+						->setParameters(array(
+								'stranka' => $stranka,
+								'sGalerii' => $obsahujeGalerii,
+								'upperContent' => $tempTemplate,
+								'noflashes' => 'noflashes'
+							));
+				$bigTemplate = (string)$bigTemplate;
+				$tempTemplate = NULL;
+				$proVlozeni = array();
+				$proVlozeni = array(
+						'html' => $bigTemplate,
+						'stranka_id' => $stranka->id
+					);
+				$bigTemplate = NULL;
+				if ($stranka->related('stranka_html_celek')->count() > 0) {
+					$stranka->related('stranka_html_celek')->order('id')->limit(1)->fetch()
+						->update($proVlozeni);
+				} else {
+					$this->database->table('stranka_html_celek')->insert($proVlozeni);
+				}
+				$proVlozeni = NULL;
+				$stranka->update(array(
+						'obsahuje_galerii' => $obsahujeGalerii,
+						'editor_zmeneno' => 'ne'
+					));
 				$this->flashMessage('Upravena stránka id ' . $stranka->id);
-				$stranka->update(array('obsahuje_galerii' => $obsahujeGalerii , 'editor_zmeneno' => 'ne'));
 			}
 		}
 		

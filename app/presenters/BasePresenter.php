@@ -17,27 +17,9 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 	{
 		$this->database = $database;
 	}
-	protected function getStranka(){
-		$url = $this->getParameter('url');
-		if (!$url) {
-			$url = '';
-		}
-		$stranka = $this->database->table('stranka')->where('url = ?', $url)->order('id')->limit(1)->fetch();
-		if ($stranka) {
-			return $stranka;
-		} else {
-			$this->shootError();
-		}
-	}
 	protected function shootError($message = 'Omlouváme se, ale stránku nelze nalézt.<br>Kontaktujte prosím správce webu: urbanovi&#64;<!-- -->kuvava.cz<br>nebo si vyberte jiný obsah v menu.', $class = 'fr', $errorText = 'Odkazovaný obsah nelze nalézt.')
 	{
 		$this->flashMessage($message,$class);
 		$this->error($errorText);
-	}
-	public function beforeRender()
-	{
-		if (!in_array($this->name, array('Error','Nastroje','Sign'), TRUE)){
-			$this->template->stranka = $this->getStranka();
-		}
 	}
 }

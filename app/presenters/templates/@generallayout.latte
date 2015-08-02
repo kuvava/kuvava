@@ -28,13 +28,21 @@
 
 {include mainMenu}
 
-{block flash}
+{define flash}
 <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message|noescape}</div>
-{/block flash}
+{/define flash}
+{ifset $noflashes}
+	{if $noflashes === 'noflashes'}
+	{else}
+	{include flash}
+	{/if}
+{else}
+{include flash}
+{/ifset}
 
 <div id="text">
-{ifset $stranka->obsah_html_nahore}
-{$stranka->obsah_html_nahore|noescape}
+{ifset $upperContent}
+{$upperContent|noescape}
 {/ifset}
 <div class="col1">
 {include content}
@@ -46,8 +54,8 @@
 <div id="cr">
 <p><a href="{include copyrightLink}">&copy; 2015 - {include copyrightAdmin}</a></p>
 </div>
-{ifset $stranka->obsahuje_galerii}
-{if $stranka->obsahuje_galerii != 'ne'}
+{ifset $sGalerii}
+{if $sGalerii != 'ne'}
 {include 'components/photoswipeGUI.latte'}
 {/if}
 {/ifset}
