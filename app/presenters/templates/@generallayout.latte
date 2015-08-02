@@ -14,17 +14,12 @@
 <link rel="shortcut icon" href="{$basePath}/favicon{include faviconVersion}.ico">
 
 <!--[if lt IE 9]><script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
-{ifset #menuSelectors}<style type="text/css">{include menuSelectors} { {include activeMenuStyle}}</style>{/ifset}
 {block head}{/block}
 </head>
 
 
 <body>
 <script> document.documentElement.className+=' js' </script>
-<div n:if="$user->loggedIn" id="user">
-		Přihlášený uživatel:<br><strong>{$user->getId()}</strong> {if $user->isInRole('admin')}(administrátor)<br>{/if}
-		<a n:href="Sign:out"><strong>Odhlásit se</strong></a> &nbsp;&nbsp; <a n:href="Nastroje:" n:if="$user->isInRole('admin')"><strong>Nástroje</strong></a>
-</div>
 
 {include mainMenu}
 
@@ -68,5 +63,12 @@
 <script src="http://nette.github.io/resources/js/netteForms.min.js"></script>
 <script src="{$basePath}/js/my-1-0-5.js"></script>
 {/block}
-</body>
-</html>
+
+{ifset $noflashes}
+{if $noflashes === 'noflashes'}
+{else}
+{include 'components/htmlBodyEnding.latte'}
+{/if}
+{else}
+{include 'components/htmlBodyEnding.latte'}
+{/ifset}

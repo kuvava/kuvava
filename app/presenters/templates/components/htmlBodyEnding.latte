@@ -1,0 +1,6 @@
+<div n:if="$user->loggedIn" id="user">
+		Přihlášený uživatel:<br><strong>{$user->getId()}</strong> {if $user->isInRole('admin')}(administrátor)<br>{/if}
+		<a n:href="Sign:out"><strong>Odhlásit se</strong></a> &nbsp;&nbsp; <a n:href="Nastroje:" n:if="$user->isInRole('admin')"><strong>Nástroje</strong></a>
+</div>
+</body>
+</html>
