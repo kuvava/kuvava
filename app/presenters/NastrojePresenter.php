@@ -27,7 +27,7 @@ class NastrojePresenter extends BasePresenter
 	{
 		parent::beforeRender();
 		$zmeneneStranky = $this->database->table('stranka')->where('editor_zmeneno != ?', 'ne');
-		\Tracy\Debugger::barDump($zmeneneStranky->count());
+		//\Tracy\Debugger::barDump($zmeneneStranky->count());
 		if ($zmeneneStranky->count() > 0) {
 			$texy = new \Texy;
 			$texy->headingModule->top = 2;
