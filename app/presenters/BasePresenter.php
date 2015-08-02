@@ -18,16 +18,11 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 		$this->database = $database;
 	}
 	protected function getStranka(){
-		$idStranek = array(
-			'Homepage' => 1,
-			'OsobniPromenyKontakt' => 2,
-			'ModerniPromenaVizaze' => 3,
-			'TeamVizazFoceni' => 4,
-			'PromenaVzhledu' => 5,
-			'ZmenaImageZeny' => 6,
-			'ZmenaImageMuze' => 7
-			);
-		$stranka = $this->database->table('stranka')->get($idStranek[$this->name]);
+		$url = $this->getParameter('url');
+		if (!$url) {
+			$url = '';
+		}
+		$stranka = $this->database->table('stranka')->where('url = ?', $url)->order('id')->limit(1)->fetch();
 		if ($stranka) {
 			return $stranka;
 		} else {
