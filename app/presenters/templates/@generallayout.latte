@@ -22,10 +22,13 @@
 <script> document.documentElement.className+=' js' </script>
 
 {include mainHead}
+
 {ifset $basicMenu}
 {include 'components/menu.latte'}
 {/ifset}
 
+<div id="text">
+<div class="e1">
 {define flash}
 <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message|noescape}</div>
 {/define flash}
@@ -38,7 +41,6 @@
 {include flash}
 {/ifset}
 
-<div id="text">
 {ifset $upperContent}
 {$upperContent|noescape}
 {/ifset}
@@ -47,6 +49,7 @@
 </div>
 <div class="col1" n:ifset="$stranka->obsah_html_dole">
 {$stranka->obsah_html_dole|noescape}
+</div>
 </div>
 </div>
 <div id="cr">
