@@ -103,7 +103,7 @@ body{
 background-color:#ffffff;}
 h1 a,menu li,.but,#cr a{
 color:#d0d1d3;}
-h1 a:hover,menu a:hover li,body,#cr a:hover{
+h1 a:hover,menu a:hover li,body,#cr a:hover,menu a.act li{
 color:#494f52;}
 .but{
 background-color:#494f52;}

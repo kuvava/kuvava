@@ -1,3 +1,4 @@
+act				aktivní položka menu
 but				vzhled jako button
 col1			jeden sloupeček na celou šířku
 col2			jeden sloupeček na polovinu šířky

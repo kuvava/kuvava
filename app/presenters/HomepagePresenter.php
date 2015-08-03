@@ -26,6 +26,11 @@ class HomepagePresenter extends BasePresenter
 		}
 	}
 
+	public function beforeRender()
+	{
+		
+	}
+	
 	public function renderDefault()
 	{
 		$this->template->html = $this->getStranka()->related('stranka_html_celek')->order('id')->limit(1)

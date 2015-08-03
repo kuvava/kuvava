@@ -87,6 +87,7 @@ class NastrojePresenter extends BasePresenter
 								'stranka' => $stranka,
 								'sGalerii' => $obsahujeGalerii,
 								'upperContent' => $tempTemplate,
+								'basicMenu' => $this->getBasicMenu(),
 								'noflashes' => 'noflashes'
 							));
 				$bigTemplate = (string)$bigTemplate;

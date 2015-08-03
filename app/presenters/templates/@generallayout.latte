@@ -21,7 +21,10 @@
 <body>
 <script> document.documentElement.className+=' js' </script>
 
-{include mainMenu}
+{include mainHead}
+{ifset $basicMenu}
+{include 'components/menu.latte'}
+{/ifset}
 
 {define flash}
 <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message|noescape}</div>

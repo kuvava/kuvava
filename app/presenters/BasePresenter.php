@@ -22,4 +22,16 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 		$this->flashMessage($message,$class);
 		$this->error($errorText);
 	}
+	protected function getBasicMenu()
+	{
+		return $this->database->table('menu_polozky')->where('menu_id = ? AND rodic = ?', 0, 0)
+			->order('poradi, id');
+	}
+	public function beforeRender()
+	{
+		$menu = $this->getBasicMenu();
+		if ($menu) {
+			$this->template->basicMenu = $menu;
+		}
+	}
 }
