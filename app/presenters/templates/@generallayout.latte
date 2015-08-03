@@ -17,18 +17,19 @@
 {block head}{/block}
 </head>
 
-
-<body>
+<script>function ah1(){ var e1=document.getElementById('ma');var e2=document.getElementById('text');var h1=document.getElementById('jst1').offsetHeight;var h2=document.getElementById('jst2').offsetHeight;var n1=Math.max(h1,h2);if(n1>0){ n1+='px';}else{ n1='auto';}e1.style.height=n1;e2.style.height=n1;} </script>
+<body onresize="ah1();">
 <script> document.documentElement.className+=' js' </script>
 
 {include mainHead}
 
+<div id="pack">
 {ifset $basicMenu}
 {include 'components/menu.latte'}
 {/ifset}
 
 <div id="text">
-<div class="e1">
+<div class="e1" id="jst2">
 {define flash}
 <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message|noescape}</div>
 {/define flash}
@@ -51,6 +52,7 @@
 {$stranka->obsah_html_dole|noescape}
 </div>
 </div>
+</div><script>ah1();</script>
 </div>
 <div id="cr">
 <p><a href="{include copyrightLink}">&copy; 2015 - {include copyrightAdmin}</a></p>

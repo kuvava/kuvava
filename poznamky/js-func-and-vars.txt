@@ -1,3 +1,4 @@
+ah1()				function která zarovnává výšku menu s výškou obsahu :-)
 clickBut1()			function pro kliknutí na #but1
 procesMenuAResize	logická proměnná, pokud je pravdivá, je vyhodnocena viditelnost menu při přechodu
 						mezi mediaqueries - mezitím je na 600ms nastavena tato proměnná na false
