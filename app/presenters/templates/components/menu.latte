@@ -1,4 +1,4 @@
 <div class="tac"><div id="but1" class="but">&nbsp;<span class="e1">Zobrazit menu</span>&nbsp;</div></div>
 <menu id="ma">
-{foreach $basicMenu as $row}<a href="/{$row->ref('stranka')->url}/"{ifset $stranka}{if $stranka->id == $row->ref('stranka')->id} class="act"{/if}{/ifset}><li>{App\Model\MyUtils::fillVar($row->alternativni_napis,$row->ref('stranka')->rubrika)}</li></a>{/foreach}
+{foreach $basicMenu as $row}{var $newUrl = App\Model\MyUtils::fillVar($row->ref('stranka')->url,NULL)}<a n:href="Homepage:default,url => $newUrl"{ifset $stranka}{if $stranka->id == $row->ref('stranka')->id} class="act"{/if}{/ifset}><li>{App\Model\MyUtils::fillVar($row->alternativni_napis,$row->ref('stranka')->rubrika)}</li></a>{/foreach}
 </menu>
