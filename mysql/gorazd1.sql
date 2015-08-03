@@ -22,7 +22,7 @@ CREATE TABLE `editor_obsahu_stranky` (
 
 INSERT INTO `editor_obsahu_stranky` (`id`, `poradi`, `pocet_sloupcu`, `stranka_id`, `galerie_skupina_fotek_id`, `obsah_texy`) VALUES
 (1,	0,	1,	1,	NULL,	'Toužíte po změně image? Dopřejte si nevšední zážitek v podobě pánské proměny s profesionály, kteří vyzdvihnou váš vzhled, podtrhnou vaše charizma a pomohou vyladit váš osobitý styl. Dokonalá technika střihu, decentní či extravagantní foto make-up, orginální oblečení s doplňky a neotřele ztvárněné fotografie vám dovolí naplno si užít roli fotomodela.\r\n\r\n[* slepek.jpg *]'),
-(10,	0,	1,	7,	NULL,	'V ceně balíčku dostanete:\r\n\r\n**2x trendy účes**\r\n- diagnostika vlasů\r\n- mytí\r\n- masáž hlavy\r\n- střih\r\n- styling\r\n- barvení pro rychlou změnu bez velkých závazků\r\n**2x fotomakeup**\r\n- péče o pleť podle typu pleti (čištění, peeling, sérum, krém)\r\n- dva typy foto make-upu (decentní a extravagantní)\r\n- v případě zájmu odlíčení po skončení focení\r\n**2x originální model**\r\n- autorské modely\r\n- zapůjčení obuvi vhodné velikosti\r\n- designové doplňky a šperky\r\n**2x profesionální focení**\r\n- 10 ks dokonalých fotografií\r\n- originální postrodukce a retuš\r\n- fotky do týdne od proměny\r\n**Cena dvou kompletních proměn je 3900,- Kč**\r\n\r\nJak proměna probíhá:\r\n***********************\r\n- ranní seznámení u kávy s celým týmem v Ateliéru jR\r\n- odvoz a stříhání do salónu Petra\r\n- líčení a vizáž v Ateliéru jR\r\n- focení první proměny\r\n- druhé líčení a vizáž\r\n- druhé focení\r\n\r\nPo celou dobu proměny je k dispozici občerstvení.\r\n'),
+(10,	0,	1,	7,	NULL,	'V ceně balíčku dostanete:\r\n\r\n**2x trendy účesy**\r\n- diagnostika vlasů\r\n- mytí\r\n- masáž hlavy\r\n- střih\r\n- styling\r\n- barvení pro rychlou změnu bez velkých závazků\r\n**2x fotomakeup**\r\n- péče o pleť podle typu pleti (čištění, peeling, sérum, krém)\r\n- dva typy foto make-upu (decentní a extravagantní)\r\n- v případě zájmu odlíčení po skončení focení\r\n**2x originální model**\r\n- autorské modely\r\n- zapůjčení obuvi vhodné velikosti\r\n- designové doplňky a šperky\r\n**2x profesionální focení**\r\n- 10 ks dokonalých fotografií\r\n- originální postrodukce a retuš\r\n- fotky do týdne od proměny\r\n**Cena dvou kompletních proměn je 3900,- Kč**\r\n\r\nJak proměna probíhá:\r\n***********************\r\n- ranní seznámení u kávy s celým týmem v Ateliéru jR\r\n- odvoz a stříhání do salónu Petra\r\n- líčení a vizáž v Ateliéru jR\r\n- focení první proměny\r\n- druhé líčení a vizáž\r\n- druhé focení\r\n\r\nPo celou dobu proměny je k dispozici občerstvení.\r\n'),
 (18,	0,	1,	3,	NULL,	'Chcete překvapit či obdarovat svého přítele, muže, bratra či syna? Chcete mu dopřát neotřelý zážitek? Splňte mu tajné přání dárkovým poukazem na změnu image...\r\n\r\nDárkové poukazy jsou k objednání na adrese: info@skryta-identita.cz\r\n\r\n[* poukaz.jpg *]\r\n\r\n'),
 (19,	0,	1,	4,	NULL,	'[* tym.jpg .(Tým skryté identity) *]\r\n\r\n[* portret1.jpg <]**Vlasová stylistka Petra Pešinová**\r\n\r\nJiž během studia jsem si uvědomila, že obor kadeřnice byl zvolen správně. Krátce po nástupu do svého prvního zaměstnání lékaři zjistili alergii na amoniak. Nevzdala jsem to a přešla do pánského kadeřnictví. Sny o vlastním salonu v počátcích podnikání v Čechách se rozplynuly po narození dětí. Stále jsem se vzdělávala v oboru a navštěvovala odborné semináře a stáže. V roce 2008 jsem se přihlásila do soutěže Hair Fashion, protože mě zajímalo, jak uspěji v mladší konkurenci. Získané druhé místo bylo odrazovým můstkem do budoucnosti. Více informací najdete na \"www.kaderpetra.cz\":http://www.kaderpetra.cz\r\n\r\n<div class=\"odznova\"></div>\r\n\r\n\r\n[* portret2.jpg <]**Vizážistka Eliška Čejková**\r\n\r\nOd dětství jsem se věnovala kresbě a malbě a postupem času má vášeň přešla od malířského plátna k jinému, ale podobnému druhu umění – k líčení. Pracuji jako vizážistka a mým cílem je krásná pleť a vyšší sebevědomí všech klientů, kteří se svěří do mých rukou. Věnuji se především líčení na svatby, společenské události a foto make-upu. Nedílnou součástí mé práce je samozřejmě poradenství v oblasti péče o pleť a v líčení. Již během studia na vysoké škole jsem absolvovala řadu kurzů k různým typům líčení a po dostudování jsem si doplnila vzdělání v oboru dermálně aplikační kosmetiky a absolvovala kurz prodlužování řas, abych mohla poskytovat své služby v co nejvyšší kvalitě a s co nejširším zaměřením.\r\n\r\n<div class=\"odznova\"></div>\r\n\r\n\r\n[* portret3.jpg <]**Módní návrhářka Jitka Šedová**\r\n\r\nAutorská modelová tvorba značky jR.\r\n Originální doplňky a autorské šperky.\r\n Zakázková tvorba oděvů, zakázkové krejčovství.\r\n\r\n<div class=\"odznova\"></div>\r\n\r\n\r\n[* portret4.jpg <]**Fotograf Lukáš Urban**\r\n\r\nFocení je mojí vášní, koníčkem i profesí. Přivedl mě k němu můj táta, kterému jsem jako školák pomáhal ve fotokomoře. Naplno jsem začal fotit s nástupem digitální techniky. Výbava se rozrůstala, zkušenosti přibývaly a přišel první milník. V roce 2009 mě kamarádka poprosila o focení svatby. Novomanželé byli z fotek nadšení a já z focení taky. Od té doby jsem svatby fotil všem známým, postupně i neznámým. Přibylo focení portrétů, reportáží ... doplnil jsem vzdělání a v roce 2014 přišel další milník. Začal jsem fotit pro noviny. Témata si vynutila přezbrojení na profi techniku, ale ty zkušenosti jsou k nezaplacení.\r\nMé portfólio najdete na webu \"fotourban.cz\":http://fotourban.cz'),
 (22,	0,	1,	2,	NULL,	'[* kontakt.jpg .(Tým skryté identity) *]\r\n- město: Hradec Králové\r\n- telefon: 732 883 091\r\n- email: info@skryta-identita.cz\r\n- facebook: \"Skrytá identita\":https://www.facebook.com/pages/Skrytá-identita/1390054944650716?pnref=lhc'),
@@ -45,7 +45,7 @@ CREATE TABLE `galerie_prirazene_polozky` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
 
 INSERT INTO `galerie_prirazene_polozky` (`id`, `galerie_skupina_fotek_id`, `vsechny_fotky_id`, `poradi`) VALUES
-(1,	1,	10,	0),
+(1,	1,	10,	1),
 (2,	1,	9,	0),
 (3,	1,	11,	0),
 (4,	1,	12,	0),
@@ -73,6 +73,27 @@ CREATE TABLE `galerie_skupina_fotek` (
 INSERT INTO `galerie_skupina_fotek` (`id`, `poznamka`, `googlepopis_automatizovane`) VALUES
 (1,	'Proměna Martina',	'Fotky pánské proměny Martina v Hradci Králové.'),
 (2,	'Pánské proměny',	'fotogalerie pánských proměn');
+
+DROP TABLE IF EXISTS `menu_polozky`;
+CREATE TABLE `menu_polozky` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `menu_id` int(11) NOT NULL DEFAULT '0',
+  `rodic` int(11) NOT NULL DEFAULT '0',
+  `uroven` int(11) NOT NULL DEFAULT '0',
+  `poradi` int(11) NOT NULL DEFAULT '0',
+  `stranka_id` int(11) NOT NULL,
+  `alternativni_napis` varchar(100) COLLATE utf8_czech_ci DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `stranka_id` (`stranka_id`),
+  CONSTRAINT `menu_polozky_ibfk_1` FOREIGN KEY (`stranka_id`) REFERENCES `stranka` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
+
+INSERT INTO `menu_polozky` (`id`, `menu_id`, `rodic`, `uroven`, `poradi`, `stranka_id`, `alternativni_napis`) VALUES
+(2,	0,	0,	0,	0,	2,	NULL),
+(3,	0,	0,	0,	0,	3,	NULL),
+(4,	0,	0,	0,	0,	4,	NULL),
+(5,	0,	0,	0,	0,	5,	NULL),
+(6,	0,	0,	0,	0,	7,	NULL);
 
 DROP TABLE IF EXISTS `stranka`;
 CREATE TABLE `stranka` (
@@ -140,7 +161,7 @@ INSERT INTO `vsechny_fotky` (`id`, `nahled_posun`, `googlepopis`, `gallery_text`
 (7,	20,	NULL,	NULL,	518635,	1202,	1800,	'width=\"1202\" height=\"1800\"',	'jpg',	'navysku',	86794,	801,	1200,	'width=\"801\" height=\"1200\"',	45223,	534,	800,	'width=\"534\" height=\"800\"',	11370,	200,	300,	'width=\"200\" height=\"300\"'),
 (8,	21,	NULL,	NULL,	436211,	1800,	1202,	'width=\"1800\" height=\"1202\"',	'jpg',	'nasirku',	75936,	1200,	801,	'width=\"1200\" height=\"801\"',	39806,	800,	534,	'width=\"800\" height=\"534\"',	10113,	300,	200,	'width=\"300\" height=\"200\"'),
 (9,	4,	NULL,	NULL,	585564,	1202,	1800,	'width=\"1202\" height=\"1800\"',	'jpg',	'navysku',	130863,	801,	1200,	'width=\"801\" height=\"1200\"',	68739,	534,	800,	'width=\"534\" height=\"800\"',	15320,	200,	300,	'width=\"200\" height=\"300\"'),
-(10,	25,	NULL,	NULL,	480856,	1202,	1800,	'width=\"1202\" height=\"1800\"',	'jpg',	'navysku',	95756,	801,	1200,	'width=\"801\" height=\"1200\"',	48959,	534,	800,	'width=\"534\" height=\"800\"',	11413,	200,	300,	'width=\"200\" height=\"300\"'),
+(10,	25,	'super popisek vole :-ú',	NULL,	480856,	1202,	1800,	'width=\"1202\" height=\"1800\"',	'jpg',	'navysku',	95756,	801,	1200,	'width=\"801\" height=\"1200\"',	48959,	534,	800,	'width=\"534\" height=\"800\"',	11413,	200,	300,	'width=\"200\" height=\"300\"'),
 (11,	1,	NULL,	NULL,	500718,	1202,	1800,	'width=\"1202\" height=\"1800\"',	'jpg',	'navysku',	102546,	801,	1200,	'width=\"801\" height=\"1200\"',	51789,	534,	800,	'width=\"534\" height=\"800\"',	11786,	200,	300,	'width=\"200\" height=\"300\"'),
 (12,	7,	NULL,	NULL,	530956,	1800,	1202,	'width=\"1800\" height=\"1202\"',	'jpg',	'nasirku',	107460,	1200,	801,	'width=\"1200\" height=\"801\"',	54383,	800,	534,	'width=\"800\" height=\"534\"',	11513,	300,	200,	'width=\"300\" height=\"200\"'),
 (13,	25,	NULL,	NULL,	493689,	1800,	1202,	'width=\"1800\" height=\"1202\"',	'jpg',	'nasirku',	92935,	1200,	801,	'width=\"1200\" height=\"801\"',	49846,	800,	534,	'width=\"800\" height=\"534\"',	12664,	300,	200,	'width=\"300\" height=\"200\"'),
@@ -173,4 +194,4 @@ CREATE TABLE `zaloha_obsah` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
 
 
--- 2015-08-02 17:16:41
+-- 2015-08-03 01:23:21
