@@ -1,10 +1,15 @@
+#all			div obalující vše
 #jst1			javascriptový testovací <div> uvnitř #ma
 #jst2			javascriptový testovací <div> uvnitř #text
 #but1			button1 (skrývá a okdrývá menu při úzké šířce displaye)
 #but2			button2 (v NastrojePresenter) spouští (přesměrovává) zpracovávání fotek do galerie
 #but2u1			utilita pro button2 (input s kopií hesla)
 #cr				copyright (v patičce)
+#head			hlavička webu
+#h1				hlavní nadpis v hlavičce webu
 #ma				menu a (hlavní nahoře)
+#map			div obalující menu
 #pack			<div> který obaluje #ma a #text a dává bílé pozadí
+#pack2			<div> který obaluje #pack
 #test			testovací div - spáruje mediaqueries a jquery
 #user			v pravém horním rohu - info o přihlášení plus odkaz k odhlášení

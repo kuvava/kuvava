@@ -16,19 +16,17 @@
 <!--[if lt IE 9]><script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
 {block head}{/block}
 </head>
-
-<script>function ah1(){ var e1=document.getElementById('ma');var e2=document.getElementById('text');var h1=document.getElementById('jst1').offsetHeight;var h2=document.getElementById('jst2').offsetHeight;var n1=Math.max(h1,h2);if(n1>0){ n1+='px';}else{ n1='auto';}e1.style.height=n1;e2.style.height=n1;} </script>
-<body onresize="ah1();">
+<body>
 <script> document.documentElement.className+=' js' </script>
-
-{include mainHead}
-
+<div id="all">
 <div id="pack">
+{include mainHead}
+<div id="pack2">
 {ifset $basicMenu}
 {include 'components/menu.latte'}
-{/ifset}
-
+{else}
 <div id="text">
+{/ifset}
 <div class="e1" id="jst2">
 {define flash}
 <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message|noescape}</div>
@@ -52,10 +50,12 @@
 {$stranka->obsah_html_dole|noescape}
 </div>
 </div>
-</div><script>ah1();</script>
+</div>
 </div>
 <div id="cr">
 <p><a href="{include copyrightLink}">&copy; 2015 - {include copyrightAdmin}</a></p>
+</div>
+</div>
 </div>
 {ifset $sGalerii}
 {if $sGalerii != 'ne'}

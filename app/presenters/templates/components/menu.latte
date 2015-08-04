@@ -1,4 +1,5 @@
+<div id="map">
 <div class="tac"><div id="but1" class="but">&nbsp;<span class="e1">Zobrazit menu</span>&nbsp;</div></div>
 <menu id="ma"><div id="jst1" class="e1">
-{foreach $basicMenu as $row}{var $newUrl = App\Model\MyUtils::fillVar($row->ref('stranka')->url,NULL)}<a n:href="Homepage:default,url => $newUrl"{ifset $stranka}{if $stranka->id == $row->ref('stranka')->id} class="act"{/if}{/ifset}><li>{App\Model\MyUtils::fillVar($row->alternativni_napis,$row->ref('stranka')->rubrika)}</li></a>{/foreach}
-</div></menu>
+{foreach $basicMenu as $row}{var $newUrl = App\Model\MyUtils::fillVar($row->ref('stranka')->url,NULL)}<a n:href="Homepage:default,url => $newUrl"{ifset $stranka}{if $stranka->id == $row->ref('stranka')->id} class="act"{/if}{/ifset}><li>{App\Model\MyUtils::fillVar($row->alternativni_napis,$row->ref('stranka')->rubrika)|upper}</li></a>{/foreach}
+</div></menu></div><div id="text">
