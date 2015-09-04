@@ -20,9 +20,9 @@ $('#policko').bind('paste', function(){
 		$('#pocet').val(policko.val().length);
 	}, 200);
 });
-$('#but2').click(function(){
-	window.location.href = '/nastroje/zpracuj-fotky/';
-});
+/*$('#but2').click(function(){
+	window.location.href = '/_nastroje/-zpracuj-fotky/';
+});*/
 });
 
 
@@ -33,7 +33,7 @@ $('#but2').click(function(){
 <h2>Spravovat obsah</h2>
 <a n:href="Nastroje:pregenerujObsah"><div class="but">Přegeneruj všechny stránky</div></a>
 <h2>Spravovat fotogalerii</h2>
-<div id="but2" class="but">Zpracovat fotografie ze složky "to-do"</div>
+<a n:href="Nastroje:zpracujFotky"><div id="but2" class="but">Zpracovat fotografie ze složky "to-do"</div></a>
 <a n:href="Nastroje:zobrazVsechnyFoto"><div id="but3" class="but">Přehled všech fotografií</div></a>
 <h2>Formulář ukazující počet znaků</h2>
 <form>
