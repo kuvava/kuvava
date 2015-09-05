@@ -16,7 +16,7 @@ menu,.but{
 font-size:1.2em;font-size:1.2rem;}
 #user,#h1 img{
 position: absolute}
-.prev img,#h1 div.bgi{
+#h1 div.bgi{
 position: relative;}
 #user{
 right:0px;
@@ -36,7 +36,7 @@ box-sizing:border-box;}
 display:none;}
 .but,#user,.prev,ul.galul li,.col2,.col3,.col4,#map,#text{
 display:inline-block;}
-.prev,#h1 div.bgi{
+#h1 div.bgi{
 overflow:hidden;}
 menu,ul.galul{
 list-style-type:none;}
@@ -47,10 +47,10 @@ margin-top:0.3em;margin-top:0.5rem;}
 p, div img:only-child.texy,#ma li{
 margin-top:1em;margin-top:1rem;
 margin-bottom:1em;margin-bottom:1rem;}
-ul.galul{
+/*ul.galul{
 margin-top:1.5em;margin-top:1.5rem;
-margin-bottom:1.5em;margin-bottom:1.5rem;}
-#pack,.but,ul.galul{
+margin-bottom:1.5em;margin-bottom:1.5rem;}*/
+#pack,.but{
 margin-left:auto;margin-right:auto;}
 .tifl{
 margin-right:0.7em;}
@@ -62,8 +62,10 @@ menu,ul.galul{
 padding:0;}
 .but{
 padding:0.3em;padding: 0rem 1rem 0.1rem 1rem;}
-ul.galul li,#ma div.e1{
+#ma div.e1{
 padding:0.5em;padding:0.5rem;}
+ul.galul li{
+padding:0.2em;padding:0.2rem;}
 #ma li{
 padding:0.2em 0.5em;padding:0.2rem 0.5rem;}
 #ma div.e1{
@@ -82,18 +84,14 @@ padding-left: 1.5rem;}
 
 #pack{
 max-width: 1450px;}
-ul.galul{
-max-width:80em;max-width:80rem;}
 td{
 min-width:6em;min-width:6rem;}
 body{
 min-width:750px;}
-.prev img.nasirku,ul.galul{
-height:100%;width: auto;}
-.prev img.navysku,img.texy,#h1 img{
+.prev img{
+height:100px;width: auto;}
+img.texy,#h1 img{
 width:100%;height: auto;}
-.prev img.ctverec{
-width:100%;height:100%;}
 #all{
 width:100%;}
 #text{
@@ -102,16 +100,15 @@ width:80%}
 width:12em;width:12rem;}
 #but1{
 width:8em;width:12rem;}
-.prev{
-width: 200px;
-height: 200px;}
 .but{
 font-weight:bold;}
 h1{
 font-weight:normal;}
-a#h1,menu a,#cr a,.but a,a .but{
+a#h1,menu a,#cr a,.but a,a .but,a.gala{
 text-decoration:none;}
-.but,.tac,#text ul.galul,#cr p{
+#text ul.galul{
+text-align:left;}
+.but,.tac,#cr p{
 text-align:center;}
 p,#text ul{
 text-align:justify;}
@@ -131,6 +128,8 @@ menu,#pack2{
 background-color:#a2ff15;}
 #h1 div.bgi,.but{
 background-color: #000;}
+.prev img{
+border: 1px solid #000;}
 a{
 color:#464646;}
 h1 div.e1{
