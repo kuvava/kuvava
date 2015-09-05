@@ -129,7 +129,7 @@ class NastrojePresenter extends BasePresenter
 		}
 		
 		$parentDir =  __DIR__ . '/../../www/images/gallery/to-do/';
-		$rootJpg = Finder::findFiles('*.jpg','*.JPG')->in($parentDir);
+		$rootJpg = Finder::findFiles('*.jpg','*.JPG','*.png','*.PNG')->in($parentDir);
 		foreach ($rootJpg as $key => $value) {
 			list($width, $height, $type, $html_attr) = getimagesize($key);
 			$size = $value->getSize();
@@ -156,7 +156,7 @@ class NastrojePresenter extends BasePresenter
 			$success = rename($key, $parentDir . '/../all/' . $filename);
 			if ($success) {
 				$this->flashMessage('Přenos souboru <strong><a href="/images/gallery/all/' . $filename .'" target="_blank">' . $filename . '</a></strong> se zdařil.');
-				$this->redirect('Nastroje:zpracujMiniatury', $photoId, 'l',$filename);
+				$this->redirect('Nastroje:zpracujMiniatury', $photoId, 'l',$filename,$fileextension);
 			} else {
 				$this->flashMessage('Přenos souboru <strong>' . $filename . '</strong> se nezdařil.', 'fr');
 				$this->redirect('Nastroje:');
@@ -166,7 +166,7 @@ class NastrojePresenter extends BasePresenter
 		$this->flashMessage('Ve složce <strong>to-do/</strong> již nejsou žádné další <strong>.jpg</strong> soubory ke zpracování.');
 		$this->redirect('Nastroje:');
 	}
-	public function actionZpracujMiniatury($photoId,$sizeCat,$filename)
+	public function actionZpracujMiniatury($photoId,$sizeCat,$filename,$fileextension)
 	{
 		if (!$this->user->isInRole('admin')){
 			$this->flashMessage('Pro přístup do sekce "nástroje" musíte být přihlášen jako uživatel s administrátorskými právy.','fr');
@@ -195,7 +195,13 @@ class NastrojePresenter extends BasePresenter
 		/*$image->sharpen();*/
 		$partUrlResizedFile = 'thumbs/' . $sizeCat . '/' . $filename;
 		$resizedFile = $imagesDir . $partUrlResizedFile;
-		$image->save($resizedFile, 80, Image::JPEG);
+		if ($fileextension === 'jpg') {
+			$image->save($resizedFile, 80, Image::JPEG);
+			\Tracy\Debugger::barDump('jpg-compresion:' . $resizedFile);
+		} else {
+			$image->save($resizedFile);
+			\Tracy\Debugger::barDump('other compresions:' . $resizedFile);
+		}
 		list($width, $height, $type, $html_attr) = getimagesize($resizedFile);
 		$size = filesize($resizedFile);
 		
@@ -213,7 +219,7 @@ class NastrojePresenter extends BasePresenter
 				$this->redirect('Nastroje:zpracujFotky');
 			} else {
 				$targetSizeCat = ($sizeCat == 'l' ? 'm' : 's');
-				$this->redirect('Nastroje:zpracujMiniatury', $photoId, $targetSizeCat, $filename);
+				$this->redirect('Nastroje:zpracujMiniatury', $photoId, $targetSizeCat, $filename,$fileextension);
 			}	
 		} else {
 			$this->flashMessage('Při výrobě miniatury<strong>' . $partUrlResizedFile . '</strong>došlo k chybě.', 'fr');
