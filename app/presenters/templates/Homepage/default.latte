@@ -1,10 +1,11 @@
 {block content}
+{if $keStazeni === 'ano'}
 <h2>Seznam položek ke stažení</h2>
 <p class="tac">
 Pro zahájení stahování klikněte na příslušnou položku.
 </p>
 
-{var $cesta = $basePath . '/download/'}
+{var $cesta = $basePath . $currDir}
 {block seznamPolozek}
 <ul n:foreach="$rootZip as $polozka">
 <li><a href="{$cesta}{$polozka->getFilename()}" target="_blank">{$polozka->getFilename()}</a> (velikost souboru: {$polozka->getSize()|bytes})</li>
@@ -16,3 +17,8 @@ Pro zahájení stahování klikněte na příslušnou položku.
 {var $novaCesta = $cesta . $key . '/'}
 {include seznamPolozek, rootZip => $polozka2, cesta => $novaCesta}
 {/foreach}
+{else}
+<p class="tac">
+Pro zobrazení konkrétních souborů ke stažení použijte prosím přímý odkaz, který jste obdrželi e-mailem.<br>V případě potíží mě prosím <a href="http://fotourban.cz/kontakt">kontaktujte</a>.
+</p>
+{/if}
