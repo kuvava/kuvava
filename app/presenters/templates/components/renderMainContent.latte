@@ -1,18 +1,1 @@
-{layout ''}
-{var $gallulid = 0}
-{foreach $casti as $fragment}
-{if $fragment->galerie_skupina_fotek_id == NULL}
-<div class="col{$fragment->pocet_sloupcu}">
-{$htmlFragmenty[$fragment->id]|noescape}
-</div>
-{else}
-{var $galUrTable = $fragment->ref('galerie_skupina_fotek')}
-{if $galUrTable}
-{var $galTable = $galUrTable->related('galerie_prirazene_polozky')->order('poradi, id')}
-{var $galAttrAlt = $galUrTable->googlepopis_automatizovane}
-{php $gallulid++}
-{include 'photoGallery.latte', galleryTable => $galTable, galleryAttrAlt => $galAttrAlt, gallulid => $gallulid}
-{/if}
-{/if}
-{/foreach}
-{block content}
+{layout ''}{var $gallulid = 0}{foreach $casti as $fragment}{if $fragment->galerie_skupina_fotek_id == NULL}<div class="col{$fragment->pocet_sloupcu}">{$htmlFragmenty[$fragment->id]|noescape}</div>{else}{var $galUrTable = $fragment->ref('galerie_skupina_fotek')}{if $galUrTable}{var $galTable = $galUrTable->related('galerie_prirazene_polozky')->order('poradi, id')}{var $galAttrAlt = $galUrTable->googlepopis_automatizovane}{php $gallulid++}{include 'photoGallery.latte', galleryTable => $galTable, galleryAttrAlt => $galAttrAlt, gallulid => $gallulid}{/if}{/if}{/foreach}{block content}
