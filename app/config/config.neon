@@ -22,8 +22,22 @@ session:
 
 tracy:
 	email: urbanovi@kuvava.cz
+	bar:
+		- @mailPanel
 
 
 services:
 	- App\Forms\SignFormFactory
 	router: App\RouterFactory::createRouter
+	nette.mailer:
+		class: RM\FileMailer
+		setup:
+			- $tempDir(%tempDir%/mails)
+	mailPanel:
+		class: RM\MailPanel
+		setup:
+			- $fileMailer(@nette.mailer)
+#			- $newMessageTime(-5 seconds)
+#			- $autoremove(-1 minutes)
+#			- $show( [subject,from,to,bc,bcc] )
+			- $hideEmpty(FALSE)
