@@ -1,5 +1,6 @@
 <div id="map">
 <div class="tac"><div id="but1" class="but">&nbsp;<span class="e1">Zobrazit menu</span>&nbsp;</div></div>
 <menu id="ma"><div id="jst1" class="e1">
-{foreach $basicMenu as $row}{var $newUrl = App\Model\MyUtils::fillVar($row->ref('stranka')->url,NULL)}<a n:href="Homepage:default,url => $newUrl"{ifset $stranka}{if $stranka->id == $row->ref('stranka')->id} class="act"{/if}{/ifset}><li>{App\Model\MyUtils::fillVar($row->alternativni_napis,$row->ref('stranka')->rubrika)|upper}</li></a>{/foreach}
+{var $staryObal = FALSE}
+{foreach $basicMenu as $row}{if App\Model\MyUtils::testVar($row->obal)}{if $staryObal}</div>{/if}<div class="{$row->obal}">{php $staryObal = TRUE}{else}{var $newUrl = App\Model\MyUtils::fillVar($row->ref('stranka')->url,NULL)}<a n:href="Homepage:default,url => $newUrl"{ifset $stranka}{if $stranka->id == $row->ref('stranka')->id} class="act"{/if}{/ifset}><li>{App\Model\MyUtils::fillVar($row->alternativni_napis,$row->ref('stranka')->rubrika)|upper}</li></a>{/if}{/foreach}{if $staryObal}</div>{php $staryObal = FALSE}{/if}
 </div></menu></div><div id="text">

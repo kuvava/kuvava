@@ -19,4 +19,9 @@ class MyUtils extends Nette\Object
 		$odpoved = (isset($promenna) && (!(trim($promenna) == FALSE))) ? $pokudPlna : $pokudPrazdna;
 		return $odpoved;
 	}
+	
+	public static function testVar($promenna)
+	{
+		return (isset($promenna) && (!(trim($promenna) == FALSE))) ? TRUE : FALSE;
+	}
 }
