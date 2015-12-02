@@ -11,6 +11,11 @@
 <meta name="description" content="{$stranka->googlepopisek}" n:ifset="$stranka->googlepopisek">
 
 <link rel="stylesheet" href="{$basePath}/css/{include cssFileName}-{include cssFileVersion}.css">
+{ifset $sGalerii}
+{if $sGalerii != 'ne'}
+<link rel="stylesheet" href="{$basePath}/css/photoswipe-1.css">
+{/if}
+{/ifset}
 <link rel="shortcut icon" href="{$basePath}/favicon{include faviconVersion}.ico">
 
 <!--[if lt IE 9]><script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
@@ -64,7 +69,12 @@
 <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 <![endif]>
 <script src="http://nette.github.io/resources/js/netteForms.min.js"></script>
-<script src="{$basePath}/js/my-1-0-5.js"></script>
+{ifset $sGalerii}
+{if $sGalerii != 'ne'}
+<script src="{$basePath}/js/pswp-1.js"></script>
+{/if}
+{/ifset}
+<script src="{$basePath}/js/my-1-0-6.js"></script>
 {/block}
 
 {ifset $noflashes}
