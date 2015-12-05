@@ -1,5 +1,5 @@
 html,body,h1{
-font-family: ArialMT, Arial, sans-serif;
+font-family: Arial, sans-serif;
 font-size:16px;
 line-height:1.6;}
 #user{
@@ -8,21 +8,14 @@ line-height:1;}
 font-size:0.8em;font-size:0.8rem;}
 h1{
 font-size:1.4em;font-size:1.4rem;}
-h1 strong{
-font-size:1.2em;}
-h1 small{
-font-size:0.65em;}
 menu,.but{
 font-size:1.2em;font-size:1.2rem;}
-#user,#h1 img{
+#head{
+font-size:0.9em;font-size:0.9rem;}
+#user{
 position: absolute}
-#h1 div.bgi{
-position: relative;}
 #user{
 right:0px;
-top:0px;}
-#h1 img{
-left:0px;
 top:0px;}
 .tifl{
 float:left;}
@@ -36,8 +29,6 @@ box-sizing:border-box;}
 display:none;}
 .but,#user,.prev,ul.galul li,.col2,.col3,.col4,#map,#text{
 display:inline-block;}
-#h1 div.bgi{
-overflow:hidden;}
 menu,ul.galul{
 list-style-type:none;}
 body,h1,menu,ul.galul,#cr p{
@@ -47,17 +38,12 @@ margin-top:0.3em;margin-top:0.5rem;}
 p, div img:only-child.texy,#ma li{
 margin-top:1em;margin-top:1rem;
 margin-bottom:1em;margin-bottom:1rem;}
-/*ul.galul{
-margin-top:1.5em;margin-top:1.5rem;
-margin-bottom:1.5em;margin-bottom:1.5rem;}*/
 #pack,.but{
 margin-left:auto;margin-right:auto;}
 .tifl{
 margin-right:0.7em;}
 .tifr{
 margin-left:0.7em;}
-h1{
-margin-left: 12rem;}
 menu,ul.galul{
 padding:0;}
 .but{
@@ -66,6 +52,8 @@ padding:0.3em;padding: 0rem 1rem 0.1rem 1rem;}
 padding:0.5em;padding:0.5rem;}
 ul.galul li{
 padding:0.2em;padding:0.2rem;}
+#head{
+padding:0.15em;padding:0.15rem;}
 #ma li{
 padding:0.2em 0.5em;padding:0.2rem 0.5rem;}
 #ma div.e1{
@@ -77,15 +65,8 @@ padding:1em 1.5em 1em 1.5em;padding:1rem 1.5rem 1rem 1.5rem;}
 .col2,.col3,.col4{
 padding-left:1em;padding-left:1rem;
 padding-right:1em;padding-right:1rem;}
-
-h1 div{
-padding-left: 1.5rem;}
-
-
 #pack{
 max-width: 1450px;}
-td{
-min-width:6em;min-width:6rem;}
 body{
 min-width:750px;}
 .prev img{
@@ -96,19 +77,19 @@ width:100%;height: auto;}
 width:100%;}
 #text{
 width:80%}
-#map,#h1 img{
+#map{
 width:12em;width:12rem;}
 #but1{
 width:8em;width:12rem;}
 .but{
 font-weight:bold;}
-h1{
-font-weight:normal;}
-a#h1,menu a,#cr a,.but a,a .but,a.gala{
+menu a,#cr a,.but a,a .but,a.gala,#head a{
 text-decoration:none;}
+.tdu{
+text-decoration:underline;}
 #text ul.galul{
 text-align:left;}
-.but,.tac,#cr p{
+.but,.tac,#cr p,#head{
 text-align:center;}
 p,#text ul{
 text-align:justify;}
@@ -118,26 +99,24 @@ text-align:right;}
 vertical-align:top;}
 body,menu a.act li,#text,#pack,#all{
 background-color:#fff;}
-.but,.but a,a h1,#cr a{
+.but,.but a,a h1,#cr a,#head a,menu li{
 color:#fff;}
-h1,#cr{
+#cr{
 background-color:#717171;}
-body,menu a.act li,menu li{
+body,menu a.act li{
 color:#000;}
 menu,#pack2{
-background-color:#a2ff15;}
-#h1 div.bgi,.but{
+background-color:#4d0132;}
+#head,.but{
 background-color: #000;}
 .prev img{
 border: 1px solid #000;}
 a{
 color:#464646;}
-h1 div.e1{
-border-bottom: 0.1rem solid #fff;}
-#h1 a{
-background-image: url('../images/main-content/final01.jpg');
-background-repeat: no-repeat;
-display: block;}
+#head{
+background-image: url('tmava-duha.png');
+background-repeat: repeat-x;
+background-position: left center;}
 #pack2{
 background-image: url('dve-barvy.png');
 background-repeat: repeat-y;}

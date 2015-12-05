@@ -17,6 +17,7 @@ odznova			vyresetování css vlastnosti float
 prev			overflow hidden div -> window for thumbnails
 tac				"text-align: center;"
 tar				"text-align: right;"
+tdu				"text-decoration: underline;"
 texy			obrázky generované pomocí texy
 tifl			texy image float left
 tifr			texy image float right

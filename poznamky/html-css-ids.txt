@@ -6,7 +6,6 @@
 #but2u1			utilita pro button2 (input s kopií hesla)
 #cr				copyright (v patičce)
 #head			hlavička webu
-#h1				hlavní nadpis v hlavičce webu
 #ma				menu a (hlavní nahoře)
 #map			div obalující menu
 #pack			<div> který obaluje #ma a #text a dává bílé pozadí
