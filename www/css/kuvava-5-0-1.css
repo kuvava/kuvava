@@ -13,10 +13,23 @@ font-size:1.2em;font-size:1.2rem;}
 #head,#cr{
 font-size:0.9em;font-size:0.9rem;}
 #user{
-position: absolute}
+position:absolute;}
+#text,#cr{
+position:relative;}
+#mlog{
+position: fixed;}
 #user{
 right:0px;
 top:0px;}
+#mlog{
+right:4px;
+bottom:4px;}
+#mlog,#user{
+z-index:11;}
+#cr{
+z-index: 10;}
+#text{
+z-index: 1;}
 .tifl{
 float:left;}
 .tifr{
@@ -67,6 +80,8 @@ padding-right:1em;padding-right:1rem;}
 max-width: 1450px;}
 body{
 min-width:750px;}
+#mlog{
+height:23px;width:23px;}
 .prev img{
 height:100px;width: auto;}
 img.texy,#h1 img{
@@ -95,18 +110,20 @@ text-align:justify;}
 text-align:right;}
 #map,#text,td{
 vertical-align:top;}
-body,menu a.act li,#text,#pack,#all{
+menu a.act li,#text,#pack{
 background-color:#fff;}
 .but,.but a,a h1,#cr,#cr a,#head a,menu li{
 color:#fff;}
 body,menu a.act li{
 color:#000;}
-menu,#pack2{
-background-color:#4d0132;}
 #head,.but,#cr{
 background-color: #000;}
 .prev img{
 border: 1px solid #000;}
+body,#all{
+background-color:#888;}
+menu,#pack2{
+background-color:#4d0132;}
 a{
 color:#047100;}
 #head,#cr{

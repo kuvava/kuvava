@@ -8,6 +8,7 @@
 #head			hlavička webu
 #ma				menu a (hlavní nahoře)
 #map			div obalující menu
+#mlog			main logo (v patičce webu)
 #pack			<div> který obaluje #ma a #text a dává bílé pozadí
 #pack2			<div> který obaluje #pack
 #test			testovací div - spáruje mediaqueries a jquery
