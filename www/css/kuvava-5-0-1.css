@@ -10,7 +10,7 @@ h1{
 font-size:1.4em;font-size:1.4rem;}
 menu,.but{
 font-size:1.2em;font-size:1.2rem;}
-#head{
+#head,#cr{
 font-size:0.9em;font-size:0.9rem;}
 #user{
 position: absolute}
@@ -31,7 +31,7 @@ display:none;}
 display:inline-block;}
 menu,ul.galul{
 list-style-type:none;}
-body,h1,menu,ul.galul,#cr p{
+body,h1,menu,ul.galul{
 margin: 0;}
 h2.e1{
 margin-top:0.3em;margin-top:0.5rem;}
@@ -52,14 +52,12 @@ padding:0.3em;padding: 0rem 1rem 0.1rem 1rem;}
 padding:0.5em;padding:0.5rem;}
 ul.galul li{
 padding:0.2em;padding:0.2rem;}
-#head{
+#head,#cr{
 padding:0.15em;padding:0.15rem;}
 #ma li{
 padding:0.2em 0.5em;padding:0.2rem 0.5rem;}
 #ma div.e1{
 padding-right:0;}
-h1,#cr{
-padding:0.5em 0em;padding:0.5rem 0rem;}
 #text div.e1{
 padding:1em 1.5em 1em 1.5em;padding:1rem 1.5rem 1rem 1.5rem;}
 .col2,.col3,.col4{
@@ -83,13 +81,13 @@ width:12em;width:12rem;}
 width:8em;width:12rem;}
 .but{
 font-weight:bold;}
-menu a,#cr a,.but a,a .but,a.gala,#head a{
+menu a,.but a,a .but,a.gala,#head a{
 text-decoration:none;}
 .tdu{
 text-decoration:underline;}
 #text ul.galul{
 text-align:left;}
-.but,.tac,#cr p,#head{
+.but,.tac,#cr,#head{
 text-align:center;}
 p,#text ul{
 text-align:justify;}
@@ -99,21 +97,19 @@ text-align:right;}
 vertical-align:top;}
 body,menu a.act li,#text,#pack,#all{
 background-color:#fff;}
-.but,.but a,a h1,#cr a,#head a,menu li{
+.but,.but a,a h1,#cr,#cr a,#head a,menu li{
 color:#fff;}
-#cr{
-background-color:#717171;}
 body,menu a.act li{
 color:#000;}
 menu,#pack2{
 background-color:#4d0132;}
-#head,.but{
+#head,.but,#cr{
 background-color: #000;}
 .prev img{
 border: 1px solid #000;}
 a{
-color:#464646;}
-#head{
+color:#047100;}
+#head,#cr{
 background-image: url('tmava-duha.png');
 background-repeat: repeat-x;
 background-position: left center;}
