@@ -26,10 +26,7 @@ class HomepagePresenter extends BasePresenter
 		}
 	}
 
-	public function beforeRender()
-	{
-		
-	}
+	
 	
 	public function renderDefault()
 	{
