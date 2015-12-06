@@ -23,12 +23,26 @@ class NastrojePresenter extends BasePresenter
 			$this->redirect('Sign:in');
 		}
 	}
+	protected function getBasicMenu()
+	{
+		$menu = $this->database->table('menu_polozky')->where('menu_id = ? AND rodic = ?', 0, 0)
+			->order('poradi, id');
+		if ($menu->fetch()) {
+			return $menu;
+		} else {
+			$this->shootError('Chyba při načítání menu z databáze!');
+		}
+	}
 	public function beforeRender()
 	{
 		parent::beforeRender();
+		$nastaveni = $this->database->table('nastaveni');
+		$this->template->nastaveni = $nastaveni;
+		$this->template->basicMenu = $this->getBasicMenu();
 		$zmeneneStranky = $this->database->table('stranka')->where('editor_zmeneno != ?', 'ne');
 		//\Tracy\Debugger::barDump($zmeneneStranky->count());
 		if ($zmeneneStranky->count() > 0) {
+			
 			$texy = new \Texy;
 			$texy->headingModule->top = 2;
 			$texy->imageModule->root  = '/images/main-content/';
@@ -88,7 +102,8 @@ class NastrojePresenter extends BasePresenter
 								'sGalerii' => $obsahujeGalerii,
 								'upperContent' => $tempTemplate,
 								'basicMenu' => $this->getBasicMenu(),
-								'noflashes' => 'noflashes'
+								'noflashes' => 'noflashes',
+								'nastaveni' => $nastaveni
 							));
 				$bigTemplate = (string)$bigTemplate;
 				$tempTemplate = NULL;
