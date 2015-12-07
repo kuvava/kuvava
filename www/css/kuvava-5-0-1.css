@@ -1,19 +1,21 @@
-html,body,h1{
+html,body{
 font-family: Arial, sans-serif;
 font-size:16px;
 line-height:1.6;}
-menu li{
+menu li,h1{
 line-height:1.2;}
 #user{
 line-height:1;}
-#user{
-font-size:0.8em;font-size:0.8rem;}
 h1{
-font-size:1.4em;font-size:1.4rem;}
+font-size:1.5em;font-size:1.5rem;}
+h2{
+font-size:1.3em;font-size:1.3rem;}
 menu,.but{
 font-size:1.1em;font-size:1.1rem;}
 #head,#cr{
 font-size:0.9em;font-size:0.9rem;}
+#user{
+font-size:0.8em;font-size:0.8rem;}
 #user{
 position:absolute;}
 #text,#cr{
@@ -46,16 +48,16 @@ display:none;}
 display:inline-block;}
 menu,ul.galul{
 list-style-type:none;}
-body,h1,menu,ul.galul{
+body,menu,ul.galul{
 margin: 0;}
-h2.e1{
-margin-top:0.3em;margin-top:0.5rem;}
 p, div img:only-child.texy{
 margin-top:1em;margin-top:1rem;
 margin-bottom:1em;margin-bottom:1rem;}
-#ma li{
+#ma li,h1{
 margin-top:0.8em;margin-top:0.8rem;
 margin-bottom:0.8em;margin-bottom:0.8rem;}
+h1{
+margin-top:0.5em;margin-top:0.5rem;}
 #pack,.but{
 margin-left:auto;margin-right:auto;}
 .tifl{
@@ -87,7 +89,7 @@ min-width:750px;}
 height:23px;width:23px;}
 .prev img{
 height:100px;width: auto;}
-img.texy,#h1 img{
+img.texy{
 width:100%;height: auto;}
 #all{
 width:100%;}
@@ -105,7 +107,7 @@ text-decoration:none;}
 text-decoration:underline;}
 #text ul.galul{
 text-align:left;}
-.but,.tac,#cr,#head{
+.but,.tac,#cr,#head,h1{
 text-align:center;}
 p,#text ul{
 text-align:justify;}
@@ -115,7 +117,7 @@ text-align:right;}
 vertical-align:top;}
 menu a.act li,#text,#pack{
 background-color:#fff;}
-.but,.but a,a h1,#cr,#cr a,#head a,menu li{
+.but,.but a,#cr,#cr a,#head a,menu li{
 color:#fff;}
 body,menu a.act li{
 color:#000;}
