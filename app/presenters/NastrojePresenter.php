@@ -44,7 +44,7 @@ class NastrojePresenter extends BasePresenter
 		if ($zmeneneStranky->count() > 0) {
 			
 			$texy = new \Texy;
-			$texy->headingModule->top = 2;
+			$texy->headingModule->top = (int)$nastaveni->get('texy_heading_top')->hodnota;
 			$texy->imageModule->root  = '/images/main-content/';
 			$texy->imageModule->leftClass  = 'tifl';
 			$texy->imageModule->rightClass  = 'tifr';
