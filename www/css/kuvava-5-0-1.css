@@ -123,11 +123,11 @@ text-align:justify;}
 text-align:right;}
 #map,#text,td{
 vertical-align:top;}
-menu a.act li,#text,#pack{
+menu a.act li,menu a.act div.act,#text,#pack{
 background-color:#fff;}
-.but,.but a,#cr,#cr a,#head a,menu li{
+.but,.but a,#cr,#cr a,#head a,menu,menu a{
 color:#fff;}
-body,menu a.act li{
+body,menu a.act li,menu a.act div.act{
 color:#000;}
 #head,.but,#cr{
 background-color: #000;}
