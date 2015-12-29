@@ -10,6 +10,9 @@ fr				flash-red = červená vyskakovací zpráva
 gala			odkazy obalující obrázky, které patří do fotogalerie
 galul			seznam obalující jeden set photoswipe fotogalerie
 js				detekce javascriptu: html.js
+lili			<li> uvnitř menu, do které je vložené další menu
+mitm			menu item
+modd			oddíl menu
 nasirku			orientace obrázku (záznam v databázi -> table `vsechny_fotky` -> column `tvar`)
 navysku			orientace obrázku (záznam v databázi -> table `vsechny_fotky` -> column `tvar`)
 odznova			vyresetování css vlastnosti float
