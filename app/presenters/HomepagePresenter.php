@@ -20,6 +20,11 @@ class HomepagePresenter extends BasePresenter
 		}
 		$stranka = $this->database->table('stranka')->where('url = ?', $url)->order('id')->limit(1)->fetch();
 		if ($stranka) {
+			if ($stranka->redirect !== NULL) {
+				$url = $this->database->table('stranka')->get($stranka->redirect)->url;
+				$params = array('url' => $url);
+				$this->redirect(301,'Homepage:default',$params);
+			}
 			return $stranka;
 		} else {
 			$this->shootError();
