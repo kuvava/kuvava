@@ -41,7 +41,7 @@ class NastrojePresenter extends BasePresenter
 		$nastaveni = $this->database->table('nastaveni');
 		$this->template->nastaveni = $nastaveni;
 		$this->template->basicMenu = $this->getBasicMenu();
-		$zmeneneStranky = $this->database->table('stranka')->where('editor_zmeneno != ?', 'ne');
+		$zmeneneStranky = $this->database->table('stranka')->where('editor_zmeneno != ?', 'ne')->where('redirect IS NULL');
 		//\Tracy\Debugger::barDump($zmeneneStranky->count());
 		if ($zmeneneStranky->count() > 0) {
 			
@@ -135,7 +135,7 @@ class NastrojePresenter extends BasePresenter
 	
 	public function actionPregenerujObsah()
 	{
-		$this->database->table('stranka')->update(array('editor_zmeneno' => 'ano'));
+		$this->database->table('stranka')->where('redirect IS NULL')->update(array('editor_zmeneno' => 'ano'));
 		$this->redirect('Nastroje:');
 	}
 	
