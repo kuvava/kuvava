@@ -133,27 +133,30 @@ text-align:right;}
 vertical-align:top;}
 div.mitm.act,#text,#pack{
 background-color:#fff;}
-.but,.but a,#cr,#cr a,#head a,menu,menu a{
+.but,.but a,menu,menu a{
 color:#fff;}
 menu li.lili{
 border: 1px solid #fff;
 border-right: 0px;}
-body,div.mitm.act{
-color:#000;}
-#head,.but,#cr{
+body,div.mitm.act,#cr a,#head a{
+color:#000000;}
+.but{
 background-color: #000;}
 .prev img{
 border: 1px solid #000;}
 body,#all{
-background-color:#74d5d1;}
+background-color:#b5ebff;}
 #pack2,#ma{
-background-color:#099100;}
+background-color:#40a500;}
 a{
 color:#840084;}
 #head,#cr{
-background-image: url('tmava-duha.png');
+background-color: #fefeac;
+background-image: url('duha-dolu-2.png');
 background-repeat: repeat-x;
 background-position: left center;}
+#cr{
+background-image: url('duha-vzhuru-2.png');}
 #pack2{
 background-image: url('bily-pruh.png');
 background-position: 12em 0em;background-position: 12rem 0rem;
