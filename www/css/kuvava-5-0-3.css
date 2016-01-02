@@ -52,6 +52,9 @@ menu,ul.galul{
 list-style-type:none;}
 body,menu,ul.galul{
 margin: 0;}
+#all{
+margin-bottom:35px;
+margin-top:0.65em;margin-top:0.65rem;}
 p, div img:only-child.texy,.but.back{
 margin-top:1em;margin-top:1rem;
 margin-bottom:1em;margin-bottom:1rem;}
@@ -59,7 +62,7 @@ margin-bottom:1em;margin-bottom:1rem;}
 margin-top:0.8em;margin-top:0.8rem;
 margin-bottom:0.8em;margin-bottom:0.8rem;}
 h1{
-margin-top:0.5em;margin-top:0.5rem;}
+margin-top:0em;margin-top:0rem;}
 ul li{
 margin-bottom:0.5em;margin-bottom:0.5rem;}
 .but.back.e1{
@@ -98,7 +101,7 @@ max-width: 1450px;}
 body{
 min-width:750px;}
 #mlog{
-height:23px;width:23px;}
+height:30px;width:30px;}
 .prev img{
 height:100px;width: auto;}
 img.texy{
@@ -178,6 +181,8 @@ min-width:370px;}
 #mlog{
 right:2px;
 bottom:2px;}
+#all{
+margin-bottom:33px;}
 }
 @media screen and (max-width: 750px){
 #text{
@@ -227,6 +232,8 @@ background-image: none;}
 #mlog{
 right:0px;
 bottom:0px;}
+#all{
+margin-bottom:29px;}
 }
 @media screen and (min-width: 1200px){
 html,body{
@@ -234,10 +241,12 @@ font-size:18px;}
 #mlog{
 right:4px;
 bottom:4px;}
+#all{
+margin-bottom:37px;}
 }
 @media screen and (min-width: 1451px){
 #all{
-margin: 2rem 0;}
+margin: 2rem 0 3rem 0;}
 }
 
 /*Nette*/
