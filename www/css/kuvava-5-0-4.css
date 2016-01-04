@@ -22,14 +22,9 @@ font-size:0.8em;font-size:0.8rem;}
 position:absolute;}
 #text,#cr{
 position:relative;}
-#mlog{
-position: fixed;}
 #user{
 right:0px;
 top:0px;}
-#mlog{
-right:3px;
-bottom:3px;}
 #mlog,#user{
 z-index:11;}
 #cr{
@@ -38,7 +33,7 @@ z-index: 10;}
 z-index: 1;}
 .tifl{
 float:left;}
-.tifr{
+.tifr,#mlog{
 float:right;}
 .odznova{
 clear:both;}
@@ -46,7 +41,7 @@ clear:both;}
 box-sizing:border-box;}
 #but1,#but1 .e2{
 display:none;}
-.but,#user,.prev,ul.galul li,.col2,.col3,.col4,#map,#text{
+.but,#user,.prev,ul.galul li,.col2,.col3,.col4,#map,#text,#slog,#mlog{
 display:inline-block;}
 menu,ul.galul{
 list-style-type:none;}
@@ -102,7 +97,7 @@ max-width: 1450px;}
 body{
 min-width:750px;}
 #mlog{
-height:30px;width:30px;}
+height:64px;width:64px;}
 .prev img{
 height:100px;width: auto;}
 img.texy{
@@ -125,9 +120,9 @@ menu a,.but a,a .but,a.gala,#head a{
 text-decoration:none;}
 .tdu{
 text-decoration:underline;}
-#text ul.galul{
+#text ul.galul,#head{
 text-align:left;}
-.but,.tac,#cr,#head,h1{
+.but,.tac,h1,#cr{
 text-align:center;}
 p,#text ul{
 text-align:justify;}
@@ -143,19 +138,22 @@ menu li.lili{
 border: 1px solid #fff;
 border-right: 0px;}
 body,div.mitm.act,#cr a,#head a{
-color:#000000;}
+color:#000;}
 .but{
 background-color: #000;}
 .prev img{
 border: 1px solid #000;}
 body,#all{
 background-color:#eee;}
+#cr{
+background-color:#ddd;}
 #pack2,#ma{
-background-color:#13b600;}
+background-color:#00cc00;}
+#head{
+background-color:#fdf700;}
 a{
-color:#840084;}
-#head,#cr{
-background-color: #fefeac;
+color:#0000ff;}
+#head{
 background-image: url('kuvava-spektrum-5-1-1-s.png');
 background-repeat: repeat-x;
 background-position: left center;}
@@ -163,9 +161,7 @@ background-position: left center;}
 display: flex;
 /* flex-direction: column;*/
 align-items: center; 
-/* justify-content: center;*/}
-#cr{
-background-image: url('duha-vzhuru-2.png');}
+justify-content: space-between;}
 #pack2{
 background-image: url('bily-pruh.png');
 background-position: 12em 0em;background-position: 12rem 0rem;
@@ -184,11 +180,6 @@ html,body{
 font-size:14px;}
 body{
 min-width:370px;}
-#mlog{
-right:2px;
-bottom:2px;}
-#all{
-margin-bottom:33px;}
 }
 @media screen and (max-width: 750px){
 #text{
@@ -235,20 +226,12 @@ menu li{
 text-align: center;}
 #pack2{
 background-image: none;}
-#mlog{
-right:0px;
-bottom:0px;}
-#all{
-margin-bottom:29px;}
+#slog{
+padding-left:0.5rem;}
 }
 @media screen and (min-width: 1200px){
 html,body{
 font-size:18px;}
-#mlog{
-right:4px;
-bottom:4px;}
-#all{
-margin-bottom:37px;}
 }
 /*@media screen and (min-width: 1451px){
 #all{
