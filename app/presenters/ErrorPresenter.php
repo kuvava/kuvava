@@ -21,7 +21,6 @@ class ErrorPresenter extends BasePresenter
 		$this->logger = $logger;
 	}
 
-
 	/**
 	 * @param  Exception
 	 * @return void
@@ -44,6 +43,11 @@ class ErrorPresenter extends BasePresenter
 			$this->payload->error = TRUE;
 			$this->terminate();
 		}
+		
+		if ($this->view !== '500') {
+			$this->template->nastaveni = $this->database->table('nastaveni');
+			$this->template->basicMenu = $this->getBasicMenu();
+		}		
 	}
 
 }

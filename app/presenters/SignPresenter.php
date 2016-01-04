@@ -27,7 +27,12 @@ class SignPresenter extends BasePresenter
 		};
 		return $form;
 	}
-
+	public function beforeRender()
+	{
+		parent::beforeRender();
+		$this->template->nastaveni = $this->database->table('nastaveni');
+		$this->template->basicMenu = $this->getBasicMenu();
+	}
 
 	public function actionOut()
 	{

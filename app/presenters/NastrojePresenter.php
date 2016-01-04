@@ -23,18 +23,7 @@ class NastrojePresenter extends BasePresenter
 			$this->redirect('Sign:in');
 		}
 	}
-	protected function getBasicMenu($leveling = FALSE)
-	{
-		$whereCond = 'menu_id = ?';
-		$whereCond = $leveling ? $whereCond : $whereCond . ' AND menu_rodic IS NULL';
-		$menu = $this->database->table('menu_polozky')->where($whereCond, 0)
-			->order('poradi, id');
-		if ($menu->fetch()) {
-			return $menu;
-		} else {
-			$this->shootError('Chyba při načítání menu z databáze!');
-		}
-	}
+	
 	public function beforeRender()
 	{
 		parent::beforeRender();
