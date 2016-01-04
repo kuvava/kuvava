@@ -11,5 +11,6 @@
 #mlog			main logo (v patičce webu)
 #pack			<div> který obaluje #ma a #text a dává bílé pozadí
 #pack2			<div> který obaluje #pack
+#slog			hlavní slogan webu v hlavičce
 #test			testovací div - spáruje mediaqueries a jquery
 #user			v pravém horním rohu - info o přihlášení plus odkaz k odhlášení
